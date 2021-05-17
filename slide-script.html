@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>RStudio, R packages, and R project</title>
+    <meta charset="utf-8" />
+    <meta name="date" content="2021-05-06" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
+    <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra_fit-screen/fit-screen.js"></script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"b1156e2cac7643cfa3bfd02cf30533aa","expires":14}</script>
+    <script src="libs/himalaya/himalaya.js"></script>
+    <script src="libs/js-cookie/js.cookie.js"></script>
+    <link href="libs/editable/editable.css" rel="stylesheet" />
+    <script src="libs/editable/editable.js"></script>
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
+    <script src="libs/peerjs/peerjs.min.js"></script>
+    <script src="libs/tiny.toast/toast.min.js"></script>
+    <link href="libs/xaringanExtra-broadcast/broadcast.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-broadcast/broadcast.js"></script>
+    <script src="libs/mark.js/mark.min.js"></script>
+    <link href="libs/xaringanExtra-search/search.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-search/search.js"></script>
+    <script>window.addEventListener('load', function() { window.xeSearch = new RemarkSearch({"position":"bottom-left","caseSensitive":false,"showIcon":false,"autoSearch":true}) })</script>
+    <script src="libs/fabric/fabric.min.js"></script>
+    <link href="libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-scribble/scribble.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30}) })</script>
+    <script src="libs/freezeframe/freezeframe.min.js"></script>
+    <script src="libs/xaringanExtra-freezeframe/freezeframe-init.js"></script>
+    <script id="xaringanExtra-freezeframe-options" type="application/json">{"selector":"img[src$=\"gif\"]","trigger":"click","overlay":false,"responsive":true,"warnings":true}</script>
+    <script src="libs/xaringanExtra-webcam/webcam.js"></script>
+    <script id="xaringanExtra-webcam-options" type="application/json">{"width":"150","height":"150","margin":"1em"}</script>
+    <link href="libs/animate.css-xaringan/animate.fade.css" rel="stylesheet" />
+    <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+
+
+class: title-page, center, middle
+
+## RStudio, R packages, and R project
+
+### A typical data science workflow in R
+
+#### May 06, 2021
+
+---
+
+class: about-me-slide, inverse, middle, center
+
+## About the trainer
+
+&lt;img style="border-radius: 50%;" src="images/ezekiel.jpeg" width="150px"/&gt;
+
+### Ezekiel Adebayo Ogundepo
+
+#### Data Scientist, Statistician
+
+.fade[Data Science Nigeria&lt;br&gt;Lagos, Nigeria]
+
+
+[&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"&gt;&lt;/path&gt;&lt;/svg&gt; https://bit.ly/gbganalyst](https://bit.ly/gbganalyst)
+[&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"&gt;&lt;/path&gt;&lt;/svg&gt; @gbganalyst](https://twitter.com/gbganalyst)
+[&lt;svg viewBox="0 0 496 512" style="position:relative;display:inline-block;top:.1em;height:1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"&gt;&lt;/path&gt;&lt;/svg&gt; @gbganalyst](https://github.com/gbganalyst)
+
+
+---
+class: middle
+
+.w-100.lh-copy[
+
+Goal:
+
+&gt; The goal of this training is to help you learn everything about R packages and how to import any data into R programming.
+
+]
+
+---
+class: inverse
+name: toc
+
+
+# Table of content
+
+.w-100.lh-copy[
+
+- [R and RStudio](#beg1)
+
+- [R packages and library](#beg2)
+
+- [RStudio project](#beg3)
+]
+
+---
+
+class: middle, center, inverse
+name: beg1
+
+# R and RStudio
+
+---
+## What is R programming
+
+.w-100.lh-copy[
+R is a statistical programming language for data cleaning, analysis, visualization, and modelling.
+]
+
+&lt;img src="images/R.PNG" width="85%" height="87%" /&gt;
+
+---
+
+## What about RStudio?
+
+.w-100.lh-copy[
+RStudio is an integrated development environment (IDE) for R
+programming. R Studio makes programming easier and friendly in R.
+]
+
+&lt;img src="images/R_studio.PNG" width="85%" height="90%" /&gt;
+---
+
+class: middle, center, inverse
+name: beg2
+
+# R packages and library
+
+---
+
+layout: true
+
+## R packages and library
+
+---
+background-image: url(https://github.com/yihui/xaringan/releases/download/v0.0.2/karl-moustache.jpg)
+---
+
+.w-100.lh-copy[
+A package is a collection of R functions that extends basic R functionality (`base::functions`).
+]
+
+--
+
+A package can contain a set of functions relating to a specific topic or tasks. 
+--
+For example, data wrangling packages include `tidyr`, `janitor`, etc.
+
+--
+
+.w-100.lh-copy[
+The location where the packages are stored is called a **library**. If there is a particular package that you need, you can install the package from the Comprehensive R Archive Network (**CRAN**) by using:
+]
+--
+
+
+```r
+install.packages("pkg_name")
+```
+For example:
+
+
+```r
+install.packages("tidyverse")
+```
+--
+.w-100.lh-copy[
+Please note that the package name must be put on double quote (**" "**) or single quote (**' '**).
+]
+
+---
+
+.w-100.lh-copy[
+Other packages that are not yet on `CRAN` can also be installed from an external repository such as **GitHub** or **GitLab** by using `devtools` or `remotes` packages.
+]
+
+--
+
+For example, package `fakir` is not on `CRAN` yet. 
+--
+ To install `fakir` from the `GitHub` repository,
+
+--
+use
+
+--
+
+
+```r
+devtools::install_github("ThinkR-open/fakir")
+```
+--
+
+or
+
+--
+
+```r
+remotes::install_github("ThinkR-open/fakir")
+```
+
+--
+
+.w-100.lh-copy[
+You can also use `devtools` or `remotes` to install development version of a package. 
+]
+
+--
+
+
+```r
+remotes::install_github("datalorax/equatiomatic")
+```
+
+---
+layout: false
+
+## Import or load a package
+
+.w-100.lh-copy[
+To actually use any installed package, you will need to use the command:
+]
+
+--
+
+
+```r
+library("pkg_name")
+```
+--
+
+.w-100.lh-copy[
+which makes that package functions available to you in the R session or environment.
+]
+
+--
+
+For example:
+
+--
+
+
+```r
+library(tidyverse)
+
+library(janitor)
+
+library(ralger)
+```
+--
+
+.w-100.lh-copy[
+You can also load all the packages with one line of code by using a function, `install_load()` in `install_load` package. For example:
+]
+
+--
+
+
+```r
+library(install.load)
+
+install_load(c("tidyverse", "janitor", "ralger"))
+```
+
+---
+
+## R Library
+
+.w-100.lh-copy[
+Library is a directory where the packages are stored. You can have multiple libraries on your hard disk.
+]
+
+--
+
+To see which libraries are available (which paths are searched for packages), use:
+
+--
+
+```r
+.libPaths()
+```
+
+```
+[1] "C:/Users/OGUNDEPO EZEKIEL .A/Documents/R/win-library/3.6"
+[2] "C:/Program Files/R/R-3.6.3/library"                      
+```
+
+---
+
+And to see packages that are there:
+
+
+```r
+lapply(.libPaths(), dir)
+```
+
+```
+[[1]]
+  [1] "abind"                "acepack"              "ada"                 
+  [4] "adabag"               "AICcmodavg"           "airports"            
+  [7] "alphavantager"        "antiword"             "anytime"             
+ [10] "aplpack"              "arm"                  "askpass"             
+ [13] "assertthat"           "astsa"                "attempt"             
+ [16] "AUC"                  "audio"                "av"                  
+ [19] "babynames"            "backports"            "bartMachine"         
+ [22] "bartMachineJARs"      "base64enc"            "BayesFactor"         
+ [25] "bayesplot"            "bayestestR"           "BBmisc"              
+ [28] "bbmle"                "BDgraph"              "bdsmatrix"           
+ [31] "beepr"                "BH"                   "bibtex"              
+ [34] "BiocManager"          "bit"                  "bit64"               
+ [37] "bitops"               "blob"                 "blogdown"            
+ [40] "boa"                  "bookdown"             "boot"                
+ [43] "brew"                 "bridgesampling"       "brio"                
+ [46] "Brobdingnag"          "broom"                "broom.mixed"         
+ [49] "broomExtra"           "BRugs"                "BSDA"                
+ [52] "bslib"                "bst"                  "BWStest"             
+ [55] "C50"                  "cachem"               "callr"               
+ [58] "car"                  "carData"              "caret"               
+ [61] "cartography"          "cartomisc"            "catboost"            
+ [64] "caTools"              "cellranger"           "charlatan"           
+ [67] "checkmate"            "cherryblossom"        "citr"                
+ [70] "classInt"             "cli"                  "clipr"               
+ [73] "clisymbols"           "cluster"              "coda"                
+ [76] "coin"                 "colorspace"           "colourpicker"        
+ [79] "colourvalues"         "combinat"             "commonmark"          
+ [82] "config"               "conflicted"           "connections"         
+ [85] "conquer"              "contfrac"             "corpcor"             
+ [88] "correlation"          "correlationfunnel"    "corrplot"            
+ [91] "corrr"                "countdown"            "countrycode"         
+ [94] "covr"                 "cowplot"              "cpp11"               
+ [97] "cranlogs"             "crayon"               "crosstalk"           
+[100] "csvy"                 "cubelyr"              "Cubist"              
+[103] "curl"                 "cyclocomp"            "d3Network"           
+[106] "data.table"           "DataExplorer"         "datapasta"           
+[109] "dbarts"               "DBI"                  "dbplot"              
+[112] "dbplyr"               "deldir"               "dendextend"          
+[115] "desc"                 "DescTools"            "deSolve"             
+[118] "devtools"             "DiagrammeR"           "dials"               
+[121] "DiceDesign"           "dichromat"            "diffobj"             
+[124] "digest"               "dismo"                "distributional"      
+[127] "doParallel"           "downloader"           "dplyr"               
+[130] "DT"                   "dtplyr"               "dtt"                 
+[133] "dummies"              "dunn.test"            "dygraphs"            
+[136] "e1071"                "earth"                "effects"             
+[139] "effectsize"           "elasticnet"           "ellipse"             
+[142] "ellipsis"             "elliptic"             "emo"                 
+[145] "EMT"                  "english"              "EnvStats"            
+[148] "epitools"             "equatiomatic"         "esquisse"            
+[151] "estimability"         "evaluate"             "exactextractr"       
+[154] "expm"                 "expsmooth"            "extraDistr"          
+[157] "extrafont"            "extrafontdb"          "ez"                  
+[160] "fable"                "fable.prophet"        "fabletools"          
+[163] "factoextra"           "FactoMineR"           "fakir"               
+[166] "fansi"                "farver"               "fastAdaboost"        
+[169] "fasterize"            "fastGHQuad"           "fastmap"             
+[172] "fastmatch"            "fdrtool"              "feasts"              
+[175] "feather"              "filelock"             "flashClust"          
+[178] "flexdashboard"        "float"                "fma"                 
+[181] "FNN"                  "foba"                 "forcats"             
+[184] "foreach"              "forecast"             "foreign"             
+[187] "forge"                "Formula"              "fpp2"                
+[190] "fpp3"                 "fracdiff"             "fs"                  
+[193] "FSA"                  "fst"                  "furrr"               
+[196] "future"               "future.apply"         "fuzzyjoin"           
+[199] "gapminder"            "gargle"               "gbm"                 
+[202] "gclus"                "gdalcubes"            "gdata"               
+[205] "gdtools"              "geeM"                 "geepack"             
+[208] "generics"             "geojsonsf"            "geosphere"           
+[211] "getPass"              "GGally"               "gganimate"           
+[214] "ggchicklet"           "ggcorrplot"           "ggeasy"              
+[217] "ggExtra"              "ggfittext"            "ggforce"             
+[220] "ggformula"            "ggimage"              "ggm"                 
+[223] "ggmap"                "ggplot2"              "ggplotify"           
+[226] "ggpubr"               "ggraph"               "ggrepel"             
+[229] "ggridges"             "ggsci"                "ggsignif"            
+[232] "ggsn"                 "ggspatial"            "ggstance"            
+[235] "ggstatsplot"          "ggtext"               "ggthemes"            
+[238] "ggvis"                "gh"                   "gifski"              
+[241] "giphyr"               "git2r"                "glasso"              
+[244] "glmnet"               "globals"              "glue"                
+[247] "gmodels"              "gmp"                  "goftest"             
+[250] "googledrive"          "googlePolylines"      "googlesheets4"       
+[253] "gower"                "GPfit"                "gplots"              
+[256] "gradethis"            "graphlayouts"         "gridBase"            
+[259] "gridExtra"            "gridGraphics"         "gridtext"            
+[262] "groupedstats"         "gstat"                "gt"                  
+[265] "gtable"               "gtools"               "gtrendsR"            
+[268] "gutenbergr"           "hablar"               "hardhat"             
+[271] "haven"                "here"                 "hexbin"              
+[274] "hexView"              "highcharter"          "highr"               
+[277] "Hmisc"                "hms"                  "hrbrthemes"          
+[280] "htmlTable"            "htmltools"            "htmlwidgets"         
+[283] "httpuv"               "httr"                 "huge"                
+[286] "hunspell"             "hypergeo"             "icons"               
+[289] "ids"                  "igraph"               "imageclipr"          
+[292] "infer"                "influenceR"           "InformationValue"    
+[295] "ini"                  "inline"               "insight"             
+[298] "inspectdf"            "install.load"         "installr"            
+[301] "intervals"            "inum"                 "ipmisc"              
+[304] "ipred"                "isoband"              "ISOcodes"            
+[307] "iterators"            "itertools"            "janeaustenr"         
+[310] "janitor"              "jpeg"                 "jquerylib"           
+[313] "jsonify"              "jsonlite"             "kableExtra"          
+[316] "kernlab"              "KernSmooth"           "kinship2"            
+[319] "klaR"                 "knitr"                "koRpus"              
+[322] "koRpus.lang.en"       "kSamples"             "kulife"              
+[325] "labeling"             "labelled"             "LaplacesDemon"       
+[328] "lars"                 "later"                "lattice"             
+[331] "latticeExtra"         "lava"                 "lavaan"              
+[334] "lazyeval"             "lda"                  "ldatuning"           
+[337] "leafem"               "leaflet"              "leaflet.extras"      
+[340] "leaflet.providers"    "leafpm"               "leafpop"             
+[343] "leafsync"             "leaps"                "LearnBayes"          
+[346] "learnr"               "lexicon"              "lgr"                 
+[349] "lhs"                  "libcoin"              "lifecycle"           
+[352] "lintr"                "listenv"              "lme4"                
+[355] "lmtest"               "logspline"            "loo"                 
+[358] "lubridate"            "lwgeom"               "magick"              
+[361] "magrittr"             "mailR"                "manipulateWidget"    
+[364] "mapdeck"              "mapedit"              "maps"                
+[367] "maptools"             "mapview"              "markdown"            
+[370] "MASS"                 "matlib"               "Matrix"              
+[373] "matrixcalc"           "MatrixModels"         "matrixStats"         
+[376] "mboost"               "mc2d"                 "mda"                 
+[379] "mdthemes"             "memoise"              "MESS"                
+[382] "metaBMA"              "metafor"              "metaplus"            
+[385] "metathis"             "Metrics"              "mgcv"                
+[388] "mgsub"                "mi"                   "microbenchmark"      
+[391] "mime"                 "miniUI"               "minqa"               
+[394] "missForest"           "mitools"              "mlapi"               
+[397] "mlbench"              "MLmetrics"            "mlr"                 
+[400] "mltools"              "mnormt"               "modeldata"           
+[403] "modeldb"              "ModelMetrics"         "modelr"              
+[406] "modeltools"           "monomvn"              "mosaicCore"          
+[409] "MSQC"                 "multcomp"             "multcompView"        
+[412] "munsell"              "mvtnorm"              "na.tools"            
+[415] "naivebayes"           "NbClust"              "ncdf4"               
+[418] "ndjson"               "network"              "networkD3"           
+[421] "NHSRdatasets"         "nlme"                 "nloptr"              
+[424] "NLP"                  "nnet"                 "nnls"                
+[427] "nortest"              "numDeriv"             "nycflights13"        
+[430] "odbc"                 "OneR"                 "openintro"           
+[433] "openssl"              "openxlsx"             "packrat"             
+[436] "padr"                 "pairwiseComparisons"  "paletteer"           
+[439] "palmerpenguins"       "pander"               "parallelMap"         
+[442] "parameters"           "ParamHelpers"         "parsedate"           
+[445] "parsnip"              "party"                "partykit"            
+[448] "patchwork"            "pbapply"              "pbivnorm"            
+[451] "pbkrtest"             "pdftools"             "performance"         
+[454] "PerformanceAnalytics" "pillar"               "pins"                
+[457] "pkgbuild"             "pkgconfig"            "pkgload"             
+[460] "pkgsearch"            "plogr"                "plotly"              
+[463] "plotmo"               "plotrix"              "pls"                 
+[466] "plyr"                 "PMCMRplus"            "png"                 
+[469] "polspline"            "polyclip"             "polynom"             
+[472] "praise"               "PreProcessing"        "prettymapr"          
+[475] "prettyunits"          "prismatic"            "pROC"                
+[478] "processx"             "prodlim"              "profvis"             
+[481] "progress"             "progressr"            "promises"            
+[484] "prophet"              "proxyC"               "ps"                  
+[487] "psych"                "purrr"                "qap"                 
+[490] "qdapRegex"            "qgraph"               "qpdf"                
+[493] "quadprog"             "Quandl"               "quanteda"            
+[496] "quantmod"             "quantreg"             "questionr"           
+[499] "qwraps2"              "R.cache"              "R.methodsS3"         
+[502] "R.oo"                 "R.utils"              "r2d3"                
+[505] "R2jags"               "R2OpenBUGS"           "R2WinBUGS"           
+[508] "R6"                   "radix"                "ralger"              
+[511] "randomForest"         "randomizr"            "randtests"           
+[514] "RANN"                 "rapidjsonr"           "rappdirs"            
+[517] "raster"               "rasterVis"            "rayshader"           
+[520] "rcmdcheck"            "Rcmdr"                "RcmdrMisc"           
+[523] "RColorBrewer"         "rcompanion"           "Rcpp"                
+[526] "RcppArmadillo"        "RcppEigen"            "RcppParallel"        
+[529] "RcppProgress"         "RcppRoll"             "RCurl"               
+[532] "rda"                  "readODS"              "readr"               
+[535] "readstata13"          "readtext"             "readxl"              
+[538] "recipes"              "RefManageR"           "regexplain"          
+[541] "registry"             "relaxo"               "relimp"              
+[544] "rematch"              "rematch2"             "remedy"              
+[547] "remotes"              "renv"                 "report"              
+[550] "repr"                 "reprex"               "repurrrsive"         
+[553] "reshape"              "reshape2"             "reticulate"          
+[556] "rex"                  "rgdal"                "rgeos"               
+[559] "rgl"                  "RgoogleMaps"          "RhpcBLASctl"         
+[562] "riingo"               "rio"                  "rjags"               
+[565] "rJava"                "rjson"                "rlang"               
+[568] "rlist"                "rmarkdown"            "rmatio"              
+[571] "Rmpfr"                "rms"                  "RMySQL"              
+[574] "rnaturalearth"        "robotstxt"            "ROCR"                
+[577] "RODBC"                "RODBCDBI"             "rosm"                
+[580] "roxygen2"             "rpart.plot"           "rpostgis"            
+[583] "RPostgres"            "RPostgreSQL"          "rprojroot"           
+[586] "rsample"              "rsconnect"            "rscontract"          
+[589] "rsparse"              "RSpectra"             "RSQLite"             
+[592] "rstan"                "rstanarm"             "rstantools"          
+[595] "rstatix"              "rstudioapi"           "rticles"             
+[598] "Rttf2pt1"             "rtweet"               "rvcheck"             
+[601] "rversions"            "rvest"                "RWeka"               
+[604] "RWekajars"            "sandwich"             "sass"                
+[607] "satellite"            "scales"               "scatterplot3d"       
+[610] "sciplot"              "SDMTools"             "searcher"            
+[613] "selectr"              "sem"                  "sentimentr"          
+[616] "seriation"            "servr"                "sessioninfo"         
+[619] "sf"                   "sfheaders"            "shades"              
+[622] "shadowtext"           "shape"                "shiny"               
+[625] "shinycssloaders"      "shinyFeedback"        "shinyjs"             
+[628] "shinystan"            "shinythemes"          "shinyWidgets"        
+[631] "showtext"             "showtextdb"           "sjlabelled"          
+[634] "skimr"                "slam"                 "slider"              
+[637] "slippymath"           "sna"                  "snakecase"           
+[640] "SnowballC"            "sortable"             "sourcetools"         
+[643] "sp"                   "spacetime"            "sparklyr"            
+[646] "SparseM"              "spatialEco"           "SpatialPack"         
+[649] "spatialwidget"        "spatstat"             "spatstat.data"       
+[652] "spatstat.utils"       "spData"               "spdep"               
+[655] "spiderbar"            "sqlpetr"              "SQUAREM"             
+[658] "stabs"                "StanHeaders"          "stars"               
+[661] "statmod"              "statnet.common"       "statsExpressions"    
+[664] "stm"                  "stopwords"            "streamR"             
+[667] "stringdist"           "stringi"              "stringr"             
+[670] "striprtf"             "strucchange"          "styler"              
+[673] "suncalc"              "SuppDists"            "sur"                 
+[676] "survey"               "survival"             "svglite"             
+[679] "sylly"                "sylly.en"             "sys"                 
+[682] "sysfonts"             "systemfonts"          "syuzhet"             
+[685] "tabulizer"            "tabulizerjars"        "tagger"              
+[688] "taskscheduleR"        "tastypie"             "tcltk2"              
+[691] "TeachingDemos"        "tensor"               "testthat"            
+[694] "text2vec"             "textclean"            "textdata"            
+[697] "textmineR"            "textshape"            "textstem"            
+[700] "TH.data"              "thematic"             "threejs"             
+[703] "tibble"               "tictoc"               "tidyBF"              
+[706] "tidygraph"            "tidyimpute"           "tidylog"             
+[709] "tidymodels"           "tidyposterior"        "tidypredict"         
+[712] "tidyquant"            "tidyr"                "tidyselect"          
+[715] "tidytable"            "tidytext"             "tidyverse"           
+[718] "tigris"               "timeDate"             "timetk"              
+[721] "tinytex"              "tm"                   "tmap"                
+[724] "tmaptools"            "TMB"                  "tokenizers"          
+[727] "topicmodels"          "treemap"              "triebeard"           
+[730] "tseries"              "tsibble"              "tsibbledata"         
+[733] "TSP"                  "TTR"                  "tune"                
+[736] "tvthemes"             "tweenr"               "units"               
+[739] "unmarked"             "urca"                 "urltools"            
+[742] "usdata"               "usethis"              "utf8"                
+[745] "uuid"                 "V8"                   "vcd"                 
+[748] "vctrs"                "vegawidget"           "velox"               
+[751] "VGAM"                 "ViewPipeSteps"        "viridis"             
+[754] "viridisLite"          "visNetwork"           "vistributions"       
+[757] "vroom"                "vtable"               "waiter"              
+[760] "waldo"                "warp"                 "webshot"             
+[763] "wesanderson"          "whisker"              "widgetframe"         
+[766] "widyr"                "withr"                "wooldridge"          
+[769] "wordcloud"            "wordcloud2"           "workflowr"           
+[772] "workflows"            "writexl"              "WRS2"                
+[775] "xaringan"             "xaringanExtra"        "xaringanthemer"      
+[778] "xfun"                 "xgboost"              "XML"                 
+[781] "xml2"                 "xmlparsedata"         "xopen"               
+[784] "xtable"               "xts"                  "yaImpute"            
+[787] "yaml"                 "yardstick"            "zeallot"             
+[790] "zip"                  "zoo"                 
+
+[[2]]
+ [1] "base"         "boot"         "class"        "cluster"      "codetools"   
+ [6] "compiler"     "datasets"     "foreign"      "graphics"     "grDevices"   
+[11] "grid"         "KernSmooth"   "lattice"      "MASS"         "Matrix"      
+[16] "methods"      "mgcv"         "nlme"         "nnet"         "parallel"    
+[21] "rpart"        "spatial"      "splines"      "stats"        "stats4"      
+[26] "survival"     "tcltk"        "tools"        "translations" "utils"       
+```
+
+---
+
+## library(x) or require(x)?
+
+.w-100.lh-copy[
+`library(pkg_name)` and `require(pkg_name)` both load the namespace of the package with name package and attach it on the search list. `require(pkg_name)` is
+designed for use inside other functions; it returns `FALSE` and gives a **warning** (rather than an **error** as `library(pkg_name)` does by default) if the package
+does not exist.
+]
+
+---
+class: middle
+## Remove installed packages
+
+
+Remove installed packages/bundles and updates index information as
+necessary.
+
+
+```r
+remove.packages("pkg_name")
+```
+---
+
+## Using function in a package with double colon (`::`) operator
+
+.w-100.lh-copy[
+There are many ways to make use of functions in a package. You can
+load the package with `library(pkg_name)` and then use any function in it.
+]
+
+--
+
+.w-100.lh-copy[
+Or you can use the `::` operator, for example, writing
+`janitor::clean_name()` rather than `library(janitor)` and then
+`clean_name()`.
+]
+
+--
+.w-100.lh-copy[
+The move is towards the latter, where only the necessary functions will be
+loaded, rather than attaching the whole package. So to carry the reader of your script on which function belongs to a particular package, it is better to use `package_name::function()`.
+]
+
+---
+class: middle
+
+### Example 1
+
+
+```r
+library(install.load)
+
+install_load(c("tidyverse", "janitor", "ralger"))
+```
+
+--
+
+### Example 2
+
+
+```r
+install.load::install_load(c("tidyverse", "janitor", "ralger"))
+```
+
+
+---
+
+class: middle, center, inverse
+name: beg3
+
+# RStudio project
+
+---
+layout: true
+## Where Does Your Analysis Live?
+
+---
+
+.w-100.lh-copy[
+The working directory is where R looks for files that you ask it to load, and where it will put any files that you ask it to save.
+]
+--
+
+RStudio shows your current working directory at the top of the console:
+
+&lt;img src="images/console.png" width="1563" /&gt;
+--
+
+&lt;br&gt;
+
+And you can also print this out by using:
+
+--
+
+
+```r
+getwd()
+```
+
+```
+[1] "C:/Users/OGUNDEPO EZEKIEL .A/Desktop/R-training/R-packages-R-project"
+```
+---
+.w-100.lh-copy[
+If you have specific directory that you want to use as your working
+directory, in `R` you can do that with the command `setwd()` e.g.
+`setwd("/path/to/my/data_analysis")`
+]
+--
+
+.w-100.lh-copy[
+or by using the keyboard shortcut  `Ctrl+Shift+H` and choose that
+specific directory (Folder).
+]
+
+---
+layout: false
+
+## Paths and Directories
+
+- .w-100.lh-copy[**Absolute paths**: This looks different in every computer. In Windows they start with a drive letter (e.g., `C:`). In my R working directory I
+have `C:\Users\OGUNDEPO EZEKIEL .A\Desktop\R-training\R-packages-R-project` as absolute path.
+]
+--
+
+.w-100.lh-copy[
+You should never use *absolute paths* in your scripts, because they hinder
+sharing and no one else will have exactly the same directory configuration as
+you.
+]
+
+--
+
+- .w-100.lh-copy[**Relative paths**: With the help of function `here::here()` or `R project`
+we can have a relative path like `data/covid19.csv` that
+allows for file sharing and collaboration.
+]
+
+---
+
+## RStudio Projects
+.w-100.lh-copy[
+For a typical data science workflow, you should use Rstudio project.
+R experts keep all the files associated with a project together—like data
+folder, R scripts folder, analytical results folder, figures folder. This is such
+a wise and common practice.
+]
+
+--
+
+&lt;img src="images/rproj.png" width="2045" /&gt;
+
+---
+
+## Creating a new R project
+
+Click `File → New Project`, then choose Existing Directory:
+
+&lt;img src="images/step1.PNG" width="704" /&gt;
+
+---
+
+Browse for that specific directory (Folder).
+
+--
+
+&lt;img src="images/step2.png" width="1389" /&gt;
+
+---
+class: middle
+
+&lt;img src="images/step3.png" width="100%" height="100%" /&gt;
+
+--
+
+Hurray! We are in the RStudio project.
+
+
+---
+class: middle
+
+&lt;img src="images/rproj.png" width="2045" /&gt;
+Henceforth, you will click `.Rproj` to open RStudio project.
+
+---
+
+## Summary
+
+.w-100.lh-copy[
+Data science workflow can be done in Rstudio, and you learnt about R packages, its install and how to load them.
+]
+--
+.w-100.lh-copy[
+You also learnt about Rstudio project that enables you to organize our files i.e. keep data files, the script, save the outputs and by using only relative path.
+]
+
+--
+.w-100.lh-copy[
+Everything you need is in one place, and cleanly separated from all the other projects that you are working on.
+]
+
+---
+class: center, middle, inverse
+
+# The end
+
+--
+
+**Thank you**
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"highlightSpans": true,
+"countIncrementalSlides": false,
+"slideNumberFormat": "%current%"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
