@@ -3,7 +3,7 @@
   <head>
     <title>RStudio, R packages, and R project</title>
     <meta charset="utf-8" />
-    <meta name="date" content="2021-05-06" />
+    <meta name="date" content="2021-05-27" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
     <script src="libs/tile-view/tile-view.js"></script>
@@ -12,7 +12,7 @@
     <script src="libs/xaringanExtra_fit-screen/fit-screen.js"></script>
     <link href="libs/panelset/panelset.css" rel="stylesheet" />
     <script src="libs/panelset/panelset.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"b1156e2cac7643cfa3bfd02cf30533aa","expires":14}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"dc562a83535c4be4b5a231cedeb9e72d","expires":14}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
@@ -61,7 +61,7 @@ class: title-page, center, middle
 
 ### A typical data science workflow in R
 
-#### May 06, 2021
+#### May 27, 2021
 
 ---
 
@@ -108,6 +108,10 @@ name: toc
 - [R packages and library](#beg2)
 
 - [RStudio project](#beg3)
+
+- [Importing data into R](#beg4)
+
+- [Exporting data from R](#beg5)
 ]
 
 ---
@@ -143,14 +147,15 @@ name: beg2
 
 # R packages and library
 
+
+&lt;img src="images/packages.png" width="2667" /&gt;
+
 ---
 
 layout: true
 
 ## R packages and library
 
----
-background-image: url(https://github.com/yihui/xaringan/releases/download/v0.0.2/karl-moustache.jpg)
 ---
 
 .w-100.lh-copy[
@@ -159,9 +164,15 @@ A package is a collection of R functions that extends basic R functionality (`ba
 
 --
 
-A package can contain a set of functions relating to a specific topic or tasks. 
+.w-100.lh-copy[
+A package can contain a set of functions relating to a specific topic or tasks.
+]
+
 --
+
+.w-100.lh-copy[
 For example, data wrangling packages include `tidyr`, `janitor`, etc.
+]
 
 --
 
@@ -235,7 +246,7 @@ layout: false
 ## Import or load a package
 
 .w-100.lh-copy[
-To actually use any installed package, you will need to use the command:
+Before you can use any installed package, you will need to import or load them by using the command:
 ]
 
 --
@@ -306,6 +317,8 @@ To see which libraries are available (which paths are searched for packages), us
 
 And to see packages that are there:
 
+--
+
 
 ```r
 lapply(.libPaths(), dir)
@@ -316,267 +329,269 @@ lapply(.libPaths(), dir)
   [1] "abind"                "acepack"              "ada"                 
   [4] "adabag"               "AICcmodavg"           "airports"            
   [7] "alphavantager"        "antiword"             "anytime"             
- [10] "aplpack"              "arm"                  "askpass"             
- [13] "assertthat"           "astsa"                "attempt"             
- [16] "AUC"                  "audio"                "av"                  
- [19] "babynames"            "backports"            "bartMachine"         
- [22] "bartMachineJARs"      "base64enc"            "BayesFactor"         
- [25] "bayesplot"            "bayestestR"           "BBmisc"              
- [28] "bbmle"                "BDgraph"              "bdsmatrix"           
- [31] "beepr"                "BH"                   "bibtex"              
- [34] "BiocManager"          "bit"                  "bit64"               
- [37] "bitops"               "blob"                 "blogdown"            
- [40] "boa"                  "bookdown"             "boot"                
- [43] "brew"                 "bridgesampling"       "brio"                
- [46] "Brobdingnag"          "broom"                "broom.mixed"         
- [49] "broomExtra"           "BRugs"                "BSDA"                
- [52] "bslib"                "bst"                  "BWStest"             
- [55] "C50"                  "cachem"               "callr"               
- [58] "car"                  "carData"              "caret"               
- [61] "cartography"          "cartomisc"            "catboost"            
- [64] "caTools"              "cellranger"           "charlatan"           
- [67] "checkmate"            "cherryblossom"        "citr"                
- [70] "classInt"             "cli"                  "clipr"               
- [73] "clisymbols"           "cluster"              "coda"                
- [76] "coin"                 "colorspace"           "colourpicker"        
- [79] "colourvalues"         "combinat"             "commonmark"          
- [82] "config"               "conflicted"           "connections"         
- [85] "conquer"              "contfrac"             "corpcor"             
- [88] "correlation"          "correlationfunnel"    "corrplot"            
- [91] "corrr"                "countdown"            "countrycode"         
- [94] "covr"                 "cowplot"              "cpp11"               
- [97] "cranlogs"             "crayon"               "crosstalk"           
-[100] "csvy"                 "cubelyr"              "Cubist"              
-[103] "curl"                 "cyclocomp"            "d3Network"           
-[106] "data.table"           "DataExplorer"         "datapasta"           
-[109] "dbarts"               "DBI"                  "dbplot"              
-[112] "dbplyr"               "deldir"               "dendextend"          
-[115] "desc"                 "DescTools"            "deSolve"             
-[118] "devtools"             "DiagrammeR"           "dials"               
-[121] "DiceDesign"           "dichromat"            "diffobj"             
-[124] "digest"               "dismo"                "distributional"      
-[127] "doParallel"           "downloader"           "dplyr"               
-[130] "DT"                   "dtplyr"               "dtt"                 
-[133] "dummies"              "dunn.test"            "dygraphs"            
-[136] "e1071"                "earth"                "effects"             
-[139] "effectsize"           "elasticnet"           "ellipse"             
-[142] "ellipsis"             "elliptic"             "emo"                 
-[145] "EMT"                  "english"              "EnvStats"            
-[148] "epitools"             "equatiomatic"         "esquisse"            
-[151] "estimability"         "evaluate"             "exactextractr"       
-[154] "expm"                 "expsmooth"            "extraDistr"          
-[157] "extrafont"            "extrafontdb"          "ez"                  
-[160] "fable"                "fable.prophet"        "fabletools"          
-[163] "factoextra"           "FactoMineR"           "fakir"               
-[166] "fansi"                "farver"               "fastAdaboost"        
-[169] "fasterize"            "fastGHQuad"           "fastmap"             
-[172] "fastmatch"            "fdrtool"              "feasts"              
-[175] "feather"              "filelock"             "flashClust"          
-[178] "flexdashboard"        "float"                "fma"                 
-[181] "FNN"                  "foba"                 "forcats"             
-[184] "foreach"              "forecast"             "foreign"             
-[187] "forge"                "Formula"              "fpp2"                
-[190] "fpp3"                 "fracdiff"             "fs"                  
-[193] "FSA"                  "fst"                  "furrr"               
-[196] "future"               "future.apply"         "fuzzyjoin"           
-[199] "gapminder"            "gargle"               "gbm"                 
-[202] "gclus"                "gdalcubes"            "gdata"               
-[205] "gdtools"              "geeM"                 "geepack"             
-[208] "generics"             "geojsonsf"            "geosphere"           
-[211] "getPass"              "GGally"               "gganimate"           
-[214] "ggchicklet"           "ggcorrplot"           "ggeasy"              
-[217] "ggExtra"              "ggfittext"            "ggforce"             
-[220] "ggformula"            "ggimage"              "ggm"                 
-[223] "ggmap"                "ggplot2"              "ggplotify"           
-[226] "ggpubr"               "ggraph"               "ggrepel"             
-[229] "ggridges"             "ggsci"                "ggsignif"            
-[232] "ggsn"                 "ggspatial"            "ggstance"            
-[235] "ggstatsplot"          "ggtext"               "ggthemes"            
-[238] "ggvis"                "gh"                   "gifski"              
-[241] "giphyr"               "git2r"                "glasso"              
-[244] "glmnet"               "globals"              "glue"                
-[247] "gmodels"              "gmp"                  "goftest"             
-[250] "googledrive"          "googlePolylines"      "googlesheets4"       
-[253] "gower"                "GPfit"                "gplots"              
-[256] "gradethis"            "graphlayouts"         "gridBase"            
-[259] "gridExtra"            "gridGraphics"         "gridtext"            
-[262] "groupedstats"         "gstat"                "gt"                  
-[265] "gtable"               "gtools"               "gtrendsR"            
-[268] "gutenbergr"           "hablar"               "hardhat"             
-[271] "haven"                "here"                 "hexbin"              
-[274] "hexView"              "highcharter"          "highr"               
-[277] "Hmisc"                "hms"                  "hrbrthemes"          
-[280] "htmlTable"            "htmltools"            "htmlwidgets"         
-[283] "httpuv"               "httr"                 "huge"                
-[286] "hunspell"             "hypergeo"             "icons"               
-[289] "ids"                  "igraph"               "imageclipr"          
-[292] "infer"                "influenceR"           "InformationValue"    
-[295] "ini"                  "inline"               "insight"             
-[298] "inspectdf"            "install.load"         "installr"            
-[301] "intervals"            "inum"                 "ipmisc"              
-[304] "ipred"                "isoband"              "ISOcodes"            
-[307] "iterators"            "itertools"            "janeaustenr"         
-[310] "janitor"              "jpeg"                 "jquerylib"           
-[313] "jsonify"              "jsonlite"             "kableExtra"          
-[316] "kernlab"              "KernSmooth"           "kinship2"            
-[319] "klaR"                 "knitr"                "koRpus"              
-[322] "koRpus.lang.en"       "kSamples"             "kulife"              
-[325] "labeling"             "labelled"             "LaplacesDemon"       
-[328] "lars"                 "later"                "lattice"             
-[331] "latticeExtra"         "lava"                 "lavaan"              
-[334] "lazyeval"             "lda"                  "ldatuning"           
-[337] "leafem"               "leaflet"              "leaflet.extras"      
-[340] "leaflet.providers"    "leafpm"               "leafpop"             
-[343] "leafsync"             "leaps"                "LearnBayes"          
-[346] "learnr"               "lexicon"              "lgr"                 
-[349] "lhs"                  "libcoin"              "lifecycle"           
-[352] "lintr"                "listenv"              "lme4"                
-[355] "lmtest"               "logspline"            "loo"                 
-[358] "lubridate"            "lwgeom"               "magick"              
-[361] "magrittr"             "mailR"                "manipulateWidget"    
-[364] "mapdeck"              "mapedit"              "maps"                
-[367] "maptools"             "mapview"              "markdown"            
-[370] "MASS"                 "matlib"               "Matrix"              
-[373] "matrixcalc"           "MatrixModels"         "matrixStats"         
-[376] "mboost"               "mc2d"                 "mda"                 
-[379] "mdthemes"             "memoise"              "MESS"                
-[382] "metaBMA"              "metafor"              "metaplus"            
-[385] "metathis"             "Metrics"              "mgcv"                
-[388] "mgsub"                "mi"                   "microbenchmark"      
-[391] "mime"                 "miniUI"               "minqa"               
-[394] "missForest"           "mitools"              "mlapi"               
-[397] "mlbench"              "MLmetrics"            "mlr"                 
-[400] "mltools"              "mnormt"               "modeldata"           
-[403] "modeldb"              "ModelMetrics"         "modelr"              
-[406] "modeltools"           "monomvn"              "mosaicCore"          
-[409] "MSQC"                 "multcomp"             "multcompView"        
-[412] "munsell"              "mvtnorm"              "na.tools"            
-[415] "naivebayes"           "NbClust"              "ncdf4"               
-[418] "ndjson"               "network"              "networkD3"           
-[421] "NHSRdatasets"         "nlme"                 "nloptr"              
-[424] "NLP"                  "nnet"                 "nnls"                
-[427] "nortest"              "numDeriv"             "nycflights13"        
-[430] "odbc"                 "OneR"                 "openintro"           
-[433] "openssl"              "openxlsx"             "packrat"             
-[436] "padr"                 "pairwiseComparisons"  "paletteer"           
-[439] "palmerpenguins"       "pander"               "parallelMap"         
-[442] "parameters"           "ParamHelpers"         "parsedate"           
-[445] "parsnip"              "party"                "partykit"            
-[448] "patchwork"            "pbapply"              "pbivnorm"            
-[451] "pbkrtest"             "pdftools"             "performance"         
-[454] "PerformanceAnalytics" "pillar"               "pins"                
-[457] "pkgbuild"             "pkgconfig"            "pkgload"             
-[460] "pkgsearch"            "plogr"                "plotly"              
-[463] "plotmo"               "plotrix"              "pls"                 
-[466] "plyr"                 "PMCMRplus"            "png"                 
-[469] "polspline"            "polyclip"             "polynom"             
-[472] "praise"               "PreProcessing"        "prettymapr"          
-[475] "prettyunits"          "prismatic"            "pROC"                
-[478] "processx"             "prodlim"              "profvis"             
-[481] "progress"             "progressr"            "promises"            
-[484] "prophet"              "proxyC"               "ps"                  
-[487] "psych"                "purrr"                "qap"                 
-[490] "qdapRegex"            "qgraph"               "qpdf"                
-[493] "quadprog"             "Quandl"               "quanteda"            
-[496] "quantmod"             "quantreg"             "questionr"           
-[499] "qwraps2"              "R.cache"              "R.methodsS3"         
-[502] "R.oo"                 "R.utils"              "r2d3"                
-[505] "R2jags"               "R2OpenBUGS"           "R2WinBUGS"           
-[508] "R6"                   "radix"                "ralger"              
-[511] "randomForest"         "randomizr"            "randtests"           
-[514] "RANN"                 "rapidjsonr"           "rappdirs"            
-[517] "raster"               "rasterVis"            "rayshader"           
-[520] "rcmdcheck"            "Rcmdr"                "RcmdrMisc"           
-[523] "RColorBrewer"         "rcompanion"           "Rcpp"                
-[526] "RcppArmadillo"        "RcppEigen"            "RcppParallel"        
-[529] "RcppProgress"         "RcppRoll"             "RCurl"               
-[532] "rda"                  "readODS"              "readr"               
-[535] "readstata13"          "readtext"             "readxl"              
-[538] "recipes"              "RefManageR"           "regexplain"          
-[541] "registry"             "relaxo"               "relimp"              
-[544] "rematch"              "rematch2"             "remedy"              
-[547] "remotes"              "renv"                 "report"              
-[550] "repr"                 "reprex"               "repurrrsive"         
-[553] "reshape"              "reshape2"             "reticulate"          
-[556] "rex"                  "rgdal"                "rgeos"               
-[559] "rgl"                  "RgoogleMaps"          "RhpcBLASctl"         
-[562] "riingo"               "rio"                  "rjags"               
-[565] "rJava"                "rjson"                "rlang"               
-[568] "rlist"                "rmarkdown"            "rmatio"              
-[571] "Rmpfr"                "rms"                  "RMySQL"              
-[574] "rnaturalearth"        "robotstxt"            "ROCR"                
-[577] "RODBC"                "RODBCDBI"             "rosm"                
-[580] "roxygen2"             "rpart.plot"           "rpostgis"            
-[583] "RPostgres"            "RPostgreSQL"          "rprojroot"           
-[586] "rsample"              "rsconnect"            "rscontract"          
-[589] "rsparse"              "RSpectra"             "RSQLite"             
-[592] "rstan"                "rstanarm"             "rstantools"          
-[595] "rstatix"              "rstudioapi"           "rticles"             
-[598] "Rttf2pt1"             "rtweet"               "rvcheck"             
-[601] "rversions"            "rvest"                "RWeka"               
-[604] "RWekajars"            "sandwich"             "sass"                
-[607] "satellite"            "scales"               "scatterplot3d"       
-[610] "sciplot"              "SDMTools"             "searcher"            
-[613] "selectr"              "sem"                  "sentimentr"          
-[616] "seriation"            "servr"                "sessioninfo"         
-[619] "sf"                   "sfheaders"            "shades"              
-[622] "shadowtext"           "shape"                "shiny"               
-[625] "shinycssloaders"      "shinyFeedback"        "shinyjs"             
-[628] "shinystan"            "shinythemes"          "shinyWidgets"        
-[631] "showtext"             "showtextdb"           "sjlabelled"          
-[634] "skimr"                "slam"                 "slider"              
-[637] "slippymath"           "sna"                  "snakecase"           
-[640] "SnowballC"            "sortable"             "sourcetools"         
-[643] "sp"                   "spacetime"            "sparklyr"            
-[646] "SparseM"              "spatialEco"           "SpatialPack"         
-[649] "spatialwidget"        "spatstat"             "spatstat.data"       
-[652] "spatstat.utils"       "spData"               "spdep"               
-[655] "spiderbar"            "sqlpetr"              "SQUAREM"             
-[658] "stabs"                "StanHeaders"          "stars"               
-[661] "statmod"              "statnet.common"       "statsExpressions"    
-[664] "stm"                  "stopwords"            "streamR"             
-[667] "stringdist"           "stringi"              "stringr"             
-[670] "striprtf"             "strucchange"          "styler"              
-[673] "suncalc"              "SuppDists"            "sur"                 
-[676] "survey"               "survival"             "svglite"             
-[679] "sylly"                "sylly.en"             "sys"                 
-[682] "sysfonts"             "systemfonts"          "syuzhet"             
-[685] "tabulizer"            "tabulizerjars"        "tagger"              
-[688] "taskscheduleR"        "tastypie"             "tcltk2"              
-[691] "TeachingDemos"        "tensor"               "testthat"            
-[694] "text2vec"             "textclean"            "textdata"            
-[697] "textmineR"            "textshape"            "textstem"            
-[700] "TH.data"              "thematic"             "threejs"             
-[703] "tibble"               "tictoc"               "tidyBF"              
-[706] "tidygraph"            "tidyimpute"           "tidylog"             
-[709] "tidymodels"           "tidyposterior"        "tidypredict"         
-[712] "tidyquant"            "tidyr"                "tidyselect"          
-[715] "tidytable"            "tidytext"             "tidyverse"           
-[718] "tigris"               "timeDate"             "timetk"              
-[721] "tinytex"              "tm"                   "tmap"                
-[724] "tmaptools"            "TMB"                  "tokenizers"          
-[727] "topicmodels"          "treemap"              "triebeard"           
-[730] "tseries"              "tsibble"              "tsibbledata"         
-[733] "TSP"                  "TTR"                  "tune"                
-[736] "tvthemes"             "tweenr"               "units"               
-[739] "unmarked"             "urca"                 "urltools"            
-[742] "usdata"               "usethis"              "utf8"                
-[745] "uuid"                 "V8"                   "vcd"                 
-[748] "vctrs"                "vegawidget"           "velox"               
-[751] "VGAM"                 "ViewPipeSteps"        "viridis"             
-[754] "viridisLite"          "visNetwork"           "vistributions"       
-[757] "vroom"                "vtable"               "waiter"              
-[760] "waldo"                "warp"                 "webshot"             
-[763] "wesanderson"          "whisker"              "widgetframe"         
-[766] "widyr"                "withr"                "wooldridge"          
-[769] "wordcloud"            "wordcloud2"           "workflowr"           
-[772] "workflows"            "writexl"              "WRS2"                
-[775] "xaringan"             "xaringanExtra"        "xaringanthemer"      
-[778] "xfun"                 "xgboost"              "XML"                 
-[781] "xml2"                 "xmlparsedata"         "xopen"               
-[784] "xtable"               "xts"                  "yaImpute"            
-[787] "yaml"                 "yardstick"            "zeallot"             
-[790] "zip"                  "zoo"                 
+ [10] "ape"                  "aplpack"              "arm"                 
+ [13] "askpass"              "assertthat"           "astsa"               
+ [16] "attempt"              "AUC"                  "audio"               
+ [19] "av"                   "babynames"            "backports"           
+ [22] "bartMachine"          "bartMachineJARs"      "base64enc"           
+ [25] "BayesFactor"          "bayesplot"            "bayestestR"          
+ [28] "BBmisc"               "bbmle"                "BDgraph"             
+ [31] "bdsmatrix"            "beepr"                "BH"                  
+ [34] "bibtex"               "BIEN"                 "BiocManager"         
+ [37] "bit"                  "bit64"                "bitops"              
+ [40] "blob"                 "blogdown"             "boa"                 
+ [43] "bookdown"             "boot"                 "brew"                
+ [46] "bridgesampling"       "brio"                 "Brobdingnag"         
+ [49] "broom"                "broom.mixed"          "broomExtra"          
+ [52] "BRugs"                "BSDA"                 "bslib"               
+ [55] "bst"                  "BWStest"              "C50"                 
+ [58] "cachem"               "callr"                "car"                 
+ [61] "carData"              "caret"                "cartography"         
+ [64] "cartomisc"            "catboost"             "caTools"             
+ [67] "cellranger"           "charlatan"            "checkmate"           
+ [70] "cherryblossom"        "citr"                 "classInt"            
+ [73] "cli"                  "clipr"                "clisymbols"          
+ [76] "cluster"              "coda"                 "coin"                
+ [79] "colorspace"           "colourpicker"         "colourvalues"        
+ [82] "combinat"             "commonmark"           "config"              
+ [85] "conflicted"           "connections"          "conquer"             
+ [88] "contfrac"             "corpcor"              "correlation"         
+ [91] "correlationfunnel"    "corrplot"             "corrr"               
+ [94] "countdown"            "countrycode"          "covr"                
+ [97] "cowplot"              "cpp11"                "cranlogs"            
+[100] "crayon"               "credentials"          "crosstalk"           
+[103] "csvy"                 "cubelyr"              "Cubist"              
+[106] "curl"                 "cyclocomp"            "d3Network"           
+[109] "data.table"           "DataExplorer"         "datamods"            
+[112] "datapasta"            "dbarts"               "DBI"                 
+[115] "dbplot"               "dbplyr"               "deldir"              
+[118] "dendextend"           "desc"                 "DescTools"           
+[121] "deSolve"              "devtools"             "DiagrammeR"          
+[124] "dials"                "DiceDesign"           "dichromat"           
+[127] "diffobj"              "digest"               "dismo"               
+[130] "distributional"       "doParallel"           "downloader"          
+[133] "dplyr"                "DT"                   "dtplyr"              
+[136] "dtt"                  "dummies"              "dunn.test"           
+[139] "dygraphs"             "e1071"                "earth"               
+[142] "effects"              "effectsize"           "elasticnet"          
+[145] "ellipse"              "ellipsis"             "elliptic"            
+[148] "emo"                  "EMT"                  "english"             
+[151] "EnvStats"             "epitools"             "equatiomatic"        
+[154] "esquisse"             "estimability"         "evaluate"            
+[157] "exactextractr"        "expm"                 "expsmooth"           
+[160] "extraDistr"           "extrafont"            "extrafontdb"         
+[163] "ez"                   "fable"                "fable.prophet"       
+[166] "fabletools"           "factoextra"           "FactoMineR"          
+[169] "fakir"                "fansi"                "farver"              
+[172] "fastAdaboost"         "fasterize"            "fastGHQuad"          
+[175] "fastmap"              "fastmatch"            "fdrtool"             
+[178] "feasts"               "feather"              "filelock"            
+[181] "flashClust"           "flexdashboard"        "float"               
+[184] "fma"                  "FNN"                  "foba"                
+[187] "forcats"              "foreach"              "forecast"            
+[190] "foreign"              "forge"                "Formula"             
+[193] "fpp2"                 "fpp3"                 "fracdiff"            
+[196] "fs"                   "FSA"                  "fst"                 
+[199] "furrr"                "future"               "future.apply"        
+[202] "fuzzyjoin"            "gapminder"            "gargle"              
+[205] "gbm"                  "gclus"                "gdalcubes"           
+[208] "gdata"                "gdtools"              "geeM"                
+[211] "geepack"              "generics"             "geojsonsf"           
+[214] "geosphere"            "gert"                 "getPass"             
+[217] "GGally"               "gganimate"            "ggchicklet"          
+[220] "ggcorrplot"           "ggeasy"               "ggExtra"             
+[223] "ggfittext"            "ggforce"              "ggformula"           
+[226] "ggimage"              "ggm"                  "ggmap"               
+[229] "ggplot2"              "ggplotify"            "ggpubr"              
+[232] "ggraph"               "ggrepel"              "ggridges"            
+[235] "ggsci"                "ggsignif"             "ggsn"                
+[238] "ggspatial"            "ggstance"             "ggstatsplot"         
+[241] "ggtext"               "ggthemes"             "ggvis"               
+[244] "gh"                   "gifski"               "giphyr"              
+[247] "git2r"                "gitcreds"             "glasso"              
+[250] "glmnet"               "globals"              "glue"                
+[253] "gmodels"              "gmp"                  "goftest"             
+[256] "googledrive"          "googlePolylines"      "googlesheets4"       
+[259] "gower"                "GPfit"                "gplots"              
+[262] "gradethis"            "graphlayouts"         "gridBase"            
+[265] "gridExtra"            "gridGraphics"         "gridtext"            
+[268] "groupedstats"         "gstat"                "gt"                  
+[271] "gtable"               "gtools"               "gtrendsR"            
+[274] "gutenbergr"           "hablar"               "hardhat"             
+[277] "haven"                "here"                 "hexbin"              
+[280] "hexView"              "highcharter"          "highr"               
+[283] "Hmisc"                "hms"                  "hrbrthemes"          
+[286] "htmlTable"            "htmltools"            "htmlwidgets"         
+[289] "httpuv"               "httr"                 "huge"                
+[292] "hunspell"             "hypergeo"             "icons"               
+[295] "ids"                  "igraph"               "imageclipr"          
+[298] "infer"                "influenceR"           "InformationValue"    
+[301] "ini"                  "inline"               "insight"             
+[304] "inspectdf"            "install.load"         "installr"            
+[307] "intervals"            "inum"                 "ipmisc"              
+[310] "ipred"                "isoband"              "ISOcodes"            
+[313] "iterators"            "itertools"            "janeaustenr"         
+[316] "janitor"              "jpeg"                 "jquerylib"           
+[319] "jsonify"              "jsonlite"             "kableExtra"          
+[322] "kernlab"              "KernSmooth"           "kinship2"            
+[325] "klaR"                 "knitr"                "koRpus"              
+[328] "koRpus.lang.en"       "kSamples"             "kulife"              
+[331] "labeling"             "labelled"             "LaplacesDemon"       
+[334] "lars"                 "later"                "lattice"             
+[337] "latticeExtra"         "lava"                 "lavaan"              
+[340] "lazyeval"             "lda"                  "ldatuning"           
+[343] "leafem"               "leaflet"              "leaflet.extras"      
+[346] "leaflet.providers"    "leafpm"               "leafpop"             
+[349] "leafsync"             "leaps"                "LearnBayes"          
+[352] "learnr"               "lexicon"              "lgr"                 
+[355] "lhs"                  "libcoin"              "librarian"           
+[358] "lifecycle"            "lintr"                "listenv"             
+[361] "lme4"                 "lmtest"               "logspline"           
+[364] "loo"                  "lubridate"            "lwgeom"              
+[367] "magick"               "magrittr"             "mailR"               
+[370] "manipulateWidget"     "mapdeck"              "mapedit"             
+[373] "maps"                 "maptools"             "mapview"             
+[376] "markdown"             "MASS"                 "matlib"              
+[379] "Matrix"               "matrixcalc"           "MatrixModels"        
+[382] "matrixStats"          "mboost"               "mc2d"                
+[385] "mda"                  "mdthemes"             "memoise"             
+[388] "MESS"                 "metaBMA"              "metafor"             
+[391] "metaplus"             "metathis"             "Metrics"             
+[394] "mgcv"                 "mgsub"                "mi"                  
+[397] "microbenchmark"       "mime"                 "miniUI"              
+[400] "minqa"                "missForest"           "mitools"             
+[403] "mlapi"                "mlbench"              "MLmetrics"           
+[406] "mlr"                  "mltools"              "mnormt"              
+[409] "modeldata"            "modeldb"              "ModelMetrics"        
+[412] "modelr"               "modeltools"           "monomvn"             
+[415] "mosaicCore"           "MSQC"                 "multcomp"            
+[418] "multcompView"         "munsell"              "mvtnorm"             
+[421] "na.tools"             "naivebayes"           "NbClust"             
+[424] "ncdf4"                "ndjson"               "network"             
+[427] "networkD3"            "NHSRdatasets"         "nlme"                
+[430] "nloptr"               "NLP"                  "nnet"                
+[433] "nnls"                 "nortest"              "numDeriv"            
+[436] "nycflights13"         "odbc"                 "OneR"                
+[439] "openintro"            "openssl"              "openxlsx"            
+[442] "packrat"              "padr"                 "pairwiseComparisons" 
+[445] "paletteer"            "palmerpenguins"       "pander"              
+[448] "parallelMap"          "parameters"           "ParamHelpers"        
+[451] "parsedate"            "parsnip"              "party"               
+[454] "partykit"             "patchwork"            "pbapply"             
+[457] "pbivnorm"             "pbkrtest"             "pdftools"            
+[460] "performance"          "PerformanceAnalytics" "pillar"              
+[463] "pins"                 "pkgbuild"             "pkgconfig"           
+[466] "pkgload"              "pkgsearch"            "plogr"               
+[469] "plotly"               "plotmo"               "plotrix"             
+[472] "pls"                  "plyr"                 "PMCMRplus"           
+[475] "png"                  "polspline"            "polyclip"            
+[478] "polynom"              "praise"               "PreProcessing"       
+[481] "prettymapr"           "prettyunits"          "prismatic"           
+[484] "pROC"                 "processx"             "prodlim"             
+[487] "profvis"              "progress"             "progressr"           
+[490] "promises"             "prophet"              "proxyC"              
+[493] "ps"                   "psych"                "purrr"               
+[496] "qap"                  "qdapRegex"            "qgraph"              
+[499] "qpdf"                 "quadprog"             "Quandl"              
+[502] "quanteda"             "quantmod"             "quantreg"            
+[505] "questionr"            "qwraps2"              "R.cache"             
+[508] "R.methodsS3"          "R.oo"                 "R.utils"             
+[511] "r2d3"                 "R2jags"               "R2OpenBUGS"          
+[514] "R2WinBUGS"            "R6"                   "radix"               
+[517] "ralger"               "randomForest"         "randomizr"           
+[520] "randtests"            "RANN"                 "rapidjsonr"          
+[523] "rappdirs"             "raster"               "rasterVis"           
+[526] "rayshader"            "rcmdcheck"            "Rcmdr"               
+[529] "RcmdrMisc"            "RColorBrewer"         "rcompanion"          
+[532] "Rcpp"                 "RcppArmadillo"        "RcppEigen"           
+[535] "RcppParallel"         "RcppProgress"         "RcppRoll"            
+[538] "RCurl"                "rda"                  "readODS"             
+[541] "readr"                "readstata13"          "readtext"            
+[544] "readxl"               "recipes"              "RefManageR"          
+[547] "regexplain"           "registry"             "relaxo"              
+[550] "relimp"               "rematch"              "rematch2"            
+[553] "remedy"               "remotes"              "renv"                
+[556] "report"               "repr"                 "reprex"              
+[559] "repurrrsive"          "reshape"              "reshape2"            
+[562] "reticulate"           "rex"                  "rgdal"               
+[565] "rgeos"                "rgl"                  "RgoogleMaps"         
+[568] "RhpcBLASctl"          "riingo"               "rio"                 
+[571] "rjags"                "rJava"                "rjson"               
+[574] "rlang"                "rlist"                "rmarkdown"           
+[577] "rmatio"               "Rmpfr"                "rms"                 
+[580] "RMySQL"               "rnaturalearth"        "robotstxt"           
+[583] "ROCR"                 "RODBC"                "RODBCDBI"            
+[586] "rosm"                 "roxygen2"             "rpart.plot"          
+[589] "rpostgis"             "RPostgres"            "RPostgreSQL"         
+[592] "rprojroot"            "rsample"              "rsconnect"           
+[595] "rscontract"           "rsparse"              "RSpectra"            
+[598] "RSQLite"              "rstan"                "rstanarm"            
+[601] "rstantools"           "rstatix"              "rstudioapi"          
+[604] "rticles"              "Rttf2pt1"             "rtweet"              
+[607] "rvcheck"              "rversions"            "rvest"               
+[610] "RWeka"                "RWekajars"            "sandwich"            
+[613] "sass"                 "satellite"            "scales"              
+[616] "scatterplot3d"        "sciplot"              "SDMTools"            
+[619] "searcher"             "selectr"              "sem"                 
+[622] "sentimentr"           "seriation"            "servr"               
+[625] "sessioninfo"          "sf"                   "sfheaders"           
+[628] "shades"               "shadowtext"           "shape"               
+[631] "shiny"                "shinycssloaders"      "shinyFeedback"       
+[634] "shinyjs"              "shinystan"            "shinythemes"         
+[637] "shinyWidgets"         "showtext"             "showtextdb"          
+[640] "sjlabelled"           "skimr"                "slam"                
+[643] "slider"               "slippymath"           "sna"                 
+[646] "snakecase"            "SnowballC"            "sortable"            
+[649] "sourcetools"          "sp"                   "spacetime"           
+[652] "sparklyr"             "SparseM"              "spatialEco"          
+[655] "SpatialPack"          "spatialwidget"        "spatstat"            
+[658] "spatstat.data"        "spatstat.utils"       "spData"              
+[661] "spdep"                "spiderbar"            "sqlpetr"             
+[664] "SQUAREM"              "stabs"                "StanHeaders"         
+[667] "stars"                "statmod"              "statnet.common"      
+[670] "statsExpressions"     "stm"                  "stopwords"           
+[673] "streamR"              "stringdist"           "stringi"             
+[676] "stringr"              "striprtf"             "strucchange"         
+[679] "styler"               "suncalc"              "SuppDists"           
+[682] "sur"                  "survey"               "survival"            
+[685] "svglite"              "sylly"                "sylly.en"            
+[688] "sys"                  "sysfonts"             "systemfonts"         
+[691] "syuzhet"              "tabulizer"            "tabulizerjars"       
+[694] "tagger"               "taskscheduleR"        "tastypie"            
+[697] "tcltk2"               "TeachingDemos"        "tensor"              
+[700] "testthat"             "text2vec"             "textclean"           
+[703] "textdata"             "textmineR"            "textshape"           
+[706] "textstem"             "TH.data"              "thematic"            
+[709] "threejs"              "tibble"               "tictoc"              
+[712] "tidyBF"               "tidygraph"            "tidyimpute"          
+[715] "tidylog"              "tidymodels"           "tidyposterior"       
+[718] "tidypredict"          "tidyquant"            "tidyr"               
+[721] "tidyselect"           "tidytable"            "tidytext"            
+[724] "tidyverse"            "tigris"               "timeDate"            
+[727] "timetk"               "tinytex"              "tm"                  
+[730] "tmap"                 "tmaptools"            "TMB"                 
+[733] "tokenizers"           "topicmodels"          "treemap"             
+[736] "triebeard"            "tseries"              "tsibble"             
+[739] "tsibbledata"          "TSP"                  "TTR"                 
+[742] "tune"                 "tvthemes"             "tweenr"              
+[745] "units"                "unmarked"             "urca"                
+[748] "urltools"             "usdata"               "usethis"             
+[751] "utf8"                 "uuid"                 "V8"                  
+[754] "vcd"                  "vctrs"                "vegawidget"          
+[757] "velox"                "VGAM"                 "ViewPipeSteps"       
+[760] "viridis"              "viridisLite"          "visNetwork"          
+[763] "vistributions"        "vroom"                "vtable"              
+[766] "waiter"               "waldo"                "warp"                
+[769] "webshot"              "wesanderson"          "whisker"             
+[772] "widgetframe"          "widyr"                "withr"               
+[775] "wooldridge"           "wordcloud"            "wordcloud2"          
+[778] "workflowr"            "workflows"            "writexl"             
+[781] "WRS2"                 "xaringan"             "xaringanExtra"       
+[784] "xaringanthemer"       "xfun"                 "xgboost"             
+[787] "XML"                  "xml2"                 "xmlparsedata"        
+[790] "xopen"                "xtable"               "xts"                 
+[793] "yaImpute"             "yaml"                 "yardstick"           
+[796] "zeallot"              "zip"                  "zoo"                 
 
 [[2]]
  [1] "base"         "boot"         "class"        "cluster"      "codetools"   
@@ -589,11 +604,13 @@ lapply(.libPaths(), dir)
 
 ---
 
-## library(x) or require(x)?
+## When to use `library(x)` or `require(x)`?
 
 .w-100.lh-copy[
-`library(pkg_name)` and `require(pkg_name)` both load the namespace of the package with name package and attach it on the search list. `require(pkg_name)` is
-designed for use inside other functions; it returns `FALSE` and gives a **warning** (rather than an **error** as `library(pkg_name)` does by default) if the package
+`library(pkg_name)` and `require(pkg_name)` both load a package to the R environment.
+
+`require(pkg_name)` is
+designed for use inside a function, it returns `FALSE`, and gives a **warning** (rather than an **error** as `library(pkg_name)` does by default) if the package
 does not exist.
 ]
 
@@ -689,7 +706,7 @@ getwd()
 ```
 
 ```
-[1] "C:/Users/OGUNDEPO EZEKIEL .A/Desktop/R-training/R-packages-R-project"
+[1] "C:/Users/OGUNDEPO EZEKIEL .A/Desktop/R-training-modules/R-packages-R-project"
 ```
 ---
 .w-100.lh-copy[
@@ -710,7 +727,7 @@ layout: false
 ## Paths and Directories
 
 - .w-100.lh-copy[**Absolute paths**: This looks different in every computer. In Windows they start with a drive letter (e.g., `C:`). In my R working directory I
-have `C:\Users\OGUNDEPO EZEKIEL .A\Desktop\R-training\R-packages-R-project` as absolute path.
+have `C:/Users/OGUNDEPO EZEKIEL .A/Desktop/R-training-modules/R-packages-R-project/data/covid19.csv` as absolute path.
 ]
 --
 
@@ -773,23 +790,119 @@ class: middle
 &lt;img src="images/rproj.png" width="2045" /&gt;
 Henceforth, you will click `.Rproj` to open RStudio project.
 
+
 ---
 
+class: middle, center, inverse
+name: beg4
+
+# Reading and writing data in R
+
+&lt;img src="images/export1.png" width="60%" height="50%" /&gt;
+---
+layout: true
+## Reading and writing data in R
+
+---
+.w-100.lh-copy[
+Creating a dataframe from scratch is so tedious. In the data science world, data will be available for you on a spreadsheet such as MS-Excel. Our job as a data scientist is to import those datasets into R using any data import packages such as `readr`(.csv), `readxl`(.xlsx), `haven`(.sav, .dta), and or `rio`(any data file format), `ralger`(web data).
+]
+
+--
+.pull-left[
+
+&lt;img src="images/import.png" width="100%" height="100%" /&gt;
+]
+
+--
+
+.pull-right[
+
+.w-100.lh-copy[
+Please note that `readr`, `readxl`, and `haven` are part of tidyverse set of packages.
+]
+]
+---
+
+- `readr` package:
+  - `read_csv()` import a `.csv` file to R 
+  
+  - `write_csv()` export a dataframe as `.csv` file out of R
+
+--
+
+- `readxl` package:
+
+  - `read_xlsx()` import a `.xlsx` file to R
+
+--
+
+- `writexl` package:
+  - `write_xlsx()` export a  dataframe as`.xlsx` file out of R 
+
+--
+
+- `haven` package:
+
+  - `read_sav()` import a `.sav` file to R
+
+  - `write_sav()` export a dataframe as `.sav` file out of R 
+  
+  - `read_dat()` import a `.dat` file to R
+
+  - `write_dat()` export a dataframe as `.dat` file out of R  
+  
+---
+
+- `rio` package
+  
+  - `import()` import any file format to R
+  
+  - `export()` export a dataframe as any file format out of R
+  
+For more information on `rio` package, please visit this [resource](https://www.rdocumentation.org/packages/rio/versions/0.5.26).
+
+--
+
+### RStudio Project
+
+.w-100.lh-copy[
+To import and export data in R, we will make use of the `RStudio project`, to automatically set up the working directory, and utilize the relative path for the data file path.
+]
+
+---
+
+### Lab session
+
+&lt;img src="images/lab.png" width="2320" /&gt;
+---
+layout: false
 ## Summary
 
 .w-100.lh-copy[
-Data science workflow can be done in Rstudio, and you learnt about R packages, its install and how to load them.
+Data science workflow can be done in Rstudio project. This enables you to organize your files i.e. keep data files, the script, save the outputs and by using only relative path.
 ]
 --
+
 .w-100.lh-copy[
-You also learnt about Rstudio project that enables you to organize our files i.e. keep data files, the script, save the outputs and by using only relative path.
+Everything you need is in one place, and cleanly separated from all other projects you are working on.
 ]
 
 --
+
 .w-100.lh-copy[
-Everything you need is in one place, and cleanly separated from all the other projects that you are working on.
+You can comfortably install any R packages be it on the `CRAN` or `GitHub` and load them to the R environment.
 ]
 
+--
+
+.w-100.lh-copy[
+Now, you can import any file format to R and also export it out.
+]
+
+
+---
+background-image: url(https://github.com/yihui/xaringan/releases/download/v0.0.2/karl-moustache.jpg)
 ---
 class: center, middle, inverse
 

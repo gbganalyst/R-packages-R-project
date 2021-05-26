@@ -107,6 +107,10 @@ name: toc
 - [R packages and library](#beg2)
 
 - [RStudio project](#beg3)
+
+- [Importing data into R](#beg4)
+
+- [Exporting data from R](#beg5)
 ]
 
 ---
@@ -146,6 +150,11 @@ name: beg2
 
 # R packages and library
 
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/packages.png")
+```
+
 ---
 
 layout: true
@@ -160,9 +169,15 @@ A package is a collection of R functions that extends basic R functionality (`ba
 
 --
 
-A package can contain a set of functions relating to a specific topic or tasks. 
+.w-100.lh-copy[
+A package can contain a set of functions relating to a specific topic or tasks.
+]
+
 --
+
+.w-100.lh-copy[
 For example, data wrangling packages include `tidyr`, `janitor`, etc.
+]
 
 --
 
@@ -231,7 +246,7 @@ layout: false
 ## Import or load a package
 
 .w-100.lh-copy[
-To actually use any installed package, you will need to use the command:
+Before you can use any installed package, you will need to import or load them by using the command:
 ]
 
 --
@@ -293,17 +308,21 @@ To see which libraries are available (which paths are searched for packages), us
 
 And to see packages that are there:
 
+--
+
 ```{r}
 lapply(.libPaths(), dir)
 ```
 
 ---
 
-## library(x) or require(x)?
+## When to use `library(x)` or `require(x)`?
 
 .w-100.lh-copy[
-`library(pkg_name)` and `require(pkg_name)` both load the namespace of the package with name package and attach it on the search list. `require(pkg_name)` is
-designed for use inside other functions; it returns `FALSE` and gives a **warning** (rather than an **error** as `library(pkg_name)` does by default) if the package
+`library(pkg_name)` and `require(pkg_name)` both load a package to the R environment.
+
+`require(pkg_name)` is
+designed for use inside a function, it returns `FALSE`, and gives a **warning** (rather than an **error** as `library(pkg_name)` does by default) if the package
 does not exist.
 ]
 
@@ -414,7 +433,7 @@ layout: false
 ## Paths and Directories
 
 - .w-100.lh-copy[**Absolute paths**: This looks different in every computer. In Windows they start with a drive letter (e.g., `C:`). In my R working directory I
-have `C:\Users\OGUNDEPO EZEKIEL .A\Desktop\R-training\R-packages-R-project` as absolute path.
+have `C:/Users/OGUNDEPO EZEKIEL .A/Desktop/R-training-modules/R-packages-R-project/data/covid19.csv` as absolute path.
 ]
 --
 
@@ -487,22 +506,122 @@ include_graphics("images/rproj.png")
 ```
 Henceforth, you will click `.Rproj` to open RStudio project.
 
+
 ---
 
+class: middle, center, inverse
+name: beg4
+
+# Reading and writing data in R
+
+```{r, echo=FALSE, out.height= "50%", out.width= "60%"}
+include_graphics("images/export1.png")
+```
+---
+layout: true
+## Reading and writing data in R
+
+---
+.w-100.lh-copy[
+Creating a dataframe from scratch is so tedious. In the data science world, data will be available for you on a spreadsheet such as MS-Excel. Our job as a data scientist is to import those datasets into R using any data import packages such as `readr`(.csv), `readxl`(.xlsx), `haven`(.sav, .dta), and or `rio`(any data file format), `ralger`(web data).
+]
+
+--
+.pull-left[
+
+```{r, echo=FALSE, out.height= "100%", out.width= "100%"}
+include_graphics("images/import.png")
+```
+]
+
+--
+
+.pull-right[
+
+.w-100.lh-copy[
+Please note that `readr`, `readxl`, and `haven` are part of tidyverse set of packages.
+]
+]
+---
+
+- `readr` package:
+  - `read_csv()` import a `.csv` file to R 
+  
+  - `write_csv()` export a dataframe as `.csv` file out of R
+
+--
+
+- `readxl` package:
+
+  - `read_xlsx()` import a `.xlsx` file to R
+
+--
+
+- `writexl` package:
+  - `write_xlsx()` export a  dataframe as`.xlsx` file out of R 
+
+--
+
+- `haven` package:
+
+  - `read_sav()` import a `.sav` file to R
+
+  - `write_sav()` export a dataframe as `.sav` file out of R 
+  
+  - `read_dat()` import a `.dat` file to R
+
+  - `write_dat()` export a dataframe as `.dat` file out of R  
+  
+---
+
+- `rio` package
+  
+  - `import()` import any file format to R
+  
+  - `export()` export a dataframe as any file format out of R
+  
+For more information on `rio` package, please visit this [resource](https://www.rdocumentation.org/packages/rio/versions/0.5.26).
+
+--
+
+### RStudio Project
+
+.w-100.lh-copy[
+To import and export data in R, we will make use of the `RStudio project`, to automatically set up the working directory, and utilize the relative path for the data file path.
+]
+
+---
+
+### Lab session
+
+```{r, echo=FALSE}
+include_graphics("images/lab.png")
+```
+---
+layout: false
 ## Summary
 
 .w-100.lh-copy[
-Data science workflow can be done in Rstudio, and you learnt about R packages, its install and how to load them.
+Data science workflow can be done in Rstudio project. This enables you to organize your files i.e. keep data files, the script, save the outputs and by using only relative path.
 ]
 --
+
 .w-100.lh-copy[
-You also learnt about Rstudio project that enables you to organize our files i.e. keep data files, the script, save the outputs and by using only relative path.
+Everything you need is in one place, and cleanly separated from all other projects you are working on.
 ]
 
 --
+
 .w-100.lh-copy[
-Everything you need is in one place, and cleanly separated from all the other projects that you are working on.
+You can comfortably install any R packages be it on the `CRAN` or `GitHub` and load them to the R environment.
 ]
+
+--
+
+.w-100.lh-copy[
+Now, you can import any file format to R and also export it out.
+]
+
 
 ---
 class: center, middle, inverse
