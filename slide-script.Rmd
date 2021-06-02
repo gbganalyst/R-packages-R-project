@@ -189,6 +189,8 @@ The location where the packages are stored is called a **library**. If there is 
 ```{r, eval=FALSE}
 install.packages("pkg_name")
 ```
+--
+
 For example:
 
 ```{r, eval=FALSE}
@@ -407,7 +409,7 @@ include_graphics("images/console.png")
 
 <br>
 
-And you can also print this out by using:
+and you can also print this out by using:
 
 --
 
@@ -515,7 +517,7 @@ name: beg4
 # Reading and writing data in R
 
 ```{r, echo=FALSE, out.height= "50%", out.width= "60%"}
-include_graphics("images/export1.png")
+include_graphics("images/export.png")
 ```
 ---
 layout: true
