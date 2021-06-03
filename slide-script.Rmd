@@ -288,7 +288,13 @@ library(install.load)
 
 install_load(c("tidyverse", "janitor", "ralger"))
 ```
+---
+background-image: url(images/package.png)
+background-size: contain
+background-position: 60% 60%
 
+
+### Think of R package as this:
 ---
 
 ## R Library
