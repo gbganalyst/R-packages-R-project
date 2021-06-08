@@ -62,6 +62,15 @@ class: title-page, center, middle
 
 ### A typical data science workflow in R
 
+```{r, echo=FALSE}
+use_logo(
+  image_url = "images/logo.png",
+  link_url = "http://www.datasciencenigeria.org",
+  position = xaringanExtra::css_position(top = "1em", right = "1em"),
+  exclude_class = c("title-page", "inverse", "hide_logo")
+)
+```
+
 ---
 
 class: about-me-slide, inverse, middle, center
