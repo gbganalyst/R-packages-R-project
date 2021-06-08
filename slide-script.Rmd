@@ -49,18 +49,18 @@ xaringanExtra::use_xaringan_extra(include = c("tile_view", "editable", "share_ag
 
 use_webcam(width = 150, height = 150)
 
-use_animate_all("fade")
-
 use_extra_styles()
 ```
+
+background-image: url(images/DSN.PNG), url(images/R_logo.png)
+background-position: 0% 100%, 100% 0%
+background-size: 40%, 10%
 
 class: title-page, center, middle
 
 ## RStudio, R packages, and R project
 
 ### A typical data science workflow in R
-
-#### `r format(Sys.Date(), "%B %d, %Y")`
 
 ---
 

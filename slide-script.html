@@ -3,7 +3,7 @@
   <head>
     <title>RStudio, R packages, and R project</title>
     <meta charset="utf-8" />
-    <meta name="date" content="2021-06-03" />
+    <meta name="date" content="2021-06-08" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
     <script src="libs/tile-view/tile-view.js"></script>
@@ -12,7 +12,7 @@
     <script src="libs/xaringanExtra_fit-screen/fit-screen.js"></script>
     <link href="libs/panelset/panelset.css" rel="stylesheet" />
     <script src="libs/panelset/panelset.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"d8b66276b2c349b0b350c0a3acf9c778","expires":14}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"d6134c891c1b4ee78f3278be7cda5439","expires":14}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
@@ -42,7 +42,6 @@
     <script id="xaringanExtra-freezeframe-options" type="application/json">{"selector":"img[src$=\"gif\"]","trigger":"click","overlay":false,"responsive":true,"warnings":true}</script>
     <script src="libs/xaringanExtra-webcam/webcam.js"></script>
     <script id="xaringanExtra-webcam-options" type="application/json">{"width":"150","height":"150","margin":"1em"}</script>
-    <link href="libs/animate.css-xaringan/animate.fade.css" rel="stylesheet" />
     <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
@@ -55,13 +54,15 @@
 
 
 
+background-image: url(images/DSN.PNG), url(images/R_logo.png)
+background-position: 0% 100%, 100% 0%
+background-size: 40%, 10%
+
 class: title-page, center, middle
 
 ## RStudio, R packages, and R project
 
 ### A typical data science workflow in R
-
-#### June 03, 2021
 
 ---
 
@@ -130,6 +131,8 @@ R is a statistical programming language for data cleaning, analysis, visualizati
 
 &lt;img src="images/R.PNG" width="85%" height="87%" /&gt;
 
+---
+background-image: url(https://github.com/yihui/xaringan/releases/download/v0.0.2/karl-moustache.jpg)
 ---
 
 ## What about RStudio?
@@ -593,13 +596,14 @@ lapply(.libPaths(), dir)
 [769] "webshot"              "wesanderson"          "whisker"             
 [772] "widgetframe"          "widyr"                "withr"               
 [775] "wooldridge"           "wordcloud"            "wordcloud2"          
-[778] "workflowr"            "workflows"            "writexl"             
-[781] "WRS2"                 "xaringan"             "xaringanExtra"       
-[784] "xaringanthemer"       "xfun"                 "xgboost"             
-[787] "XML"                  "xml2"                 "xmlparsedata"        
-[790] "xopen"                "xtable"               "xts"                 
-[793] "yaImpute"             "yaml"                 "yardstick"           
-[796] "zeallot"              "zip"                  "zoo"                 
+[778] "workflowr"            "workflows"            "workflowsets"        
+[781] "writexl"              "WRS2"                 "xaringan"            
+[784] "xaringanExtra"        "xaringanthemer"       "xfun"                
+[787] "xgboost"              "XML"                  "xml2"                
+[790] "xmlparsedata"         "xopen"                "xtable"              
+[793] "xts"                  "yaImpute"             "yaml"                
+[796] "yardstick"            "zeallot"              "zip"                 
+[799] "zoo"                 
 
 [[2]]
  [1] "base"         "boot"         "class"        "cluster"      "codetools"   
@@ -807,8 +811,6 @@ name: beg4
 # Reading and writing data in R
 
 &lt;img src="images/export.png" width="60%" height="50%" /&gt;
----
-background-image: url(https://github.com/yihui/xaringan/releases/download/v0.0.2/karl-moustache.jpg)
 ---
 layout: true
 ## Reading and writing data in R
