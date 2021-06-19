@@ -52,7 +52,7 @@ use_webcam(width = 150, height = 150)
 use_extra_styles()
 ```
 
-background-image: url(images/DSN.PNG), url(images/R_logo.png)
+background-image: url(images/gbg.jpg), url(images/R_logo.png)
 background-position: 0% 100%, 100% 0%
 background-size: 40%, 10%
 
@@ -64,8 +64,8 @@ class: title-page, center, middle
 
 ```{r, echo=FALSE}
 use_logo(
-  image_url = "images/logo.png",
-  link_url = "http://www.datasciencenigeria.org",
+  image_url = "images/gbg.jpg",
+  link_url = "https://bit.ly/gbganalyst",
   position = xaringanExtra::css_position(top = "1em", right = "1em"),
   exclude_class = c("title-page", "inverse", "hide_logo")
 )
@@ -90,6 +90,37 @@ class: about-me-slide, inverse, middle, center
 [`r icons::fontawesome("twitter")` @gbganalyst](https://twitter.com/gbganalyst)
 [`r icons::icon_style(icons::fontawesome("github"), scale = 1)` @gbganalyst](https://github.com/gbganalyst)
 
+---
+class: about-me-slide, inverse, middle, center
+
+## About the trainer
+
+<img style="border-radius: 80%;" src="images/abono.jpg" width="180px"/>
+
+### Olanrewaju Ahmed Babajide
+
+#### Principal System Analyst, Data Scientist
+
+.fade[University of Ibadan<br>Oyo, Nigeria]
+
+[`r icons::fontawesome("link")` https://ui.edu.ng/ABOlanrewaju](https://ui.edu.ng/ABOlanrewaju)
+[`r icons::fontawesome("twitter")` @abono2000](https://twitter.com/abono2000)
+[`r icons::icon_style(icons::fontawesome("github"), scale = 1)` @abono2000](https://github.com/abono2000)
+
+---
+class: about-me-slide, inverse, middle, center
+
+## About the trainer
+
+<img style="border-radius: 80%;" src="images/prof_kay.jpeg" width="180px"/>
+
+### Ogunyemi Olakunle Joshua
+
+#### Data Scientist
+
+.fade[TAG NG<br>Lagos, Nigeria]
+
+[`r icons::fontawesome("twitter")` @olakunle4impact](https://twitter.com/olakunle4impact)
 
 ---
 class: middle
@@ -263,7 +294,7 @@ Before you can use any installed package, you will need to import or load them b
 --
 
 ```{r, eval=FALSE}
-library("pkg_name")
+library(pkg_name)
 ```
 --
 
@@ -317,20 +348,10 @@ Library is a directory where the packages are stored. You can have multiple libr
 To see which libraries are available (which paths are searched for packages), use:
 
 --
+
 ```{r}
 .libPaths()
 ```
-
----
-
-And to see packages that are there:
-
---
-
-```{r}
-lapply(.libPaths(), dir)
-```
-
 ---
 
 ## When to use `library(x)` or `require(x)`?
@@ -540,7 +561,7 @@ layout: true
 
 ---
 .w-100.lh-copy[
-Creating a dataframe from scratch is so tedious. In the data science world, data will be available for you on a spreadsheet such as MS-Excel. Our job as a data scientist is to import those datasets into R using any data import packages such as `readr`(.csv), `readxl`(.xlsx), `haven`(.sav, .dta), and or `rio`(any data file format), `ralger`(web data).
+Creating a dataframe from scratch is so tedious. In the data science world, data will be available for you on a spreadsheet such as MS-Excel. Our job as a data scientist is to import those datasets into R using any data import packages such as `readr` (.csv), `readxl` (.xlsx), `haven` (.sav, .dta), and or `rio` (any data file format), `ralger` (web data).
 ]
 
 --
@@ -585,7 +606,7 @@ Please note that `readr`, `readxl`, and `haven` are part of tidyverse set of pac
 
   - `write_sav()` export a dataframe as `.sav` file out of R 
   
-  - `read_dat()` import a `.dat` file to R
+  - `read_dta()` import a `.dta` file to R
 
   - `write_dat()` export a dataframe as `.dat` file out of R  
   

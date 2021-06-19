@@ -3,7 +3,7 @@
   <head>
     <title>RStudio, R packages, and R project</title>
     <meta charset="utf-8" />
-    <meta name="date" content="2021-06-08" />
+    <meta name="date" content="2021-06-19" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
     <script src="libs/tile-view/tile-view.js"></script>
@@ -12,7 +12,7 @@
     <script src="libs/xaringanExtra_fit-screen/fit-screen.js"></script>
     <link href="libs/panelset/panelset.css" rel="stylesheet" />
     <script src="libs/panelset/panelset.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x4f21be12f8e4f0da9537ce92f13caa5","expires":14}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"b850704737e145d885d324da4529572e","expires":14}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
@@ -54,7 +54,7 @@
 
 
 
-background-image: url(images/DSN.PNG), url(images/R_logo.png)
+background-image: url(images/gbg.jpg), url(images/R_logo.png)
 background-position: 0% 100%, 100% 0%
 background-size: 40%, 10%
 
@@ -69,7 +69,7 @@ class: title-page, center, middle
 width: 110px;
 height: 128px;
 z-index: 0;
-background-image: url(images/logo.png);
+background-image: url(images/gbg.jpg);
 background-size: contain;
 background-repeat: no-repeat;
 position: absolute;
@@ -89,7 +89,7 @@ top:1em;right:1em;
         .forEach(function (slide) {
           const logo = document.createElement('a')
           logo.classList = 'xaringan-extra-logo'
-          logo.href = 'http://www.datasciencenigeria.org'
+          logo.href = 'https://bit.ly/gbganalyst'
           slide.appendChild(logo)
         })
     }
@@ -117,6 +117,37 @@ class: about-me-slide, inverse, middle, center
 [&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"&gt;&lt;/path&gt;&lt;/svg&gt; @gbganalyst](https://twitter.com/gbganalyst)
 [&lt;svg viewBox="0 0 496 512" style="position:relative;display:inline-block;top:.1em;height:1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"&gt;&lt;/path&gt;&lt;/svg&gt; @gbganalyst](https://github.com/gbganalyst)
 
+---
+class: about-me-slide, inverse, middle, center
+
+## About the trainer
+
+&lt;img style="border-radius: 80%;" src="images/abono.jpg" width="180px"/&gt;
+
+### Olanrewaju Ahmed Babajide
+
+#### Principal System Analyst, Data Scientist
+
+.fade[University of Ibadan&lt;br&gt;Oyo, Nigeria]
+
+[&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"&gt;&lt;/path&gt;&lt;/svg&gt; https://ui.edu.ng/ABOlanrewaju](https://ui.edu.ng/ABOlanrewaju)
+[&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"&gt;&lt;/path&gt;&lt;/svg&gt; @abono2000](https://twitter.com/abono2000)
+[&lt;svg viewBox="0 0 496 512" style="position:relative;display:inline-block;top:.1em;height:1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"&gt;&lt;/path&gt;&lt;/svg&gt; @abono2000](https://github.com/abono2000)
+
+---
+class: about-me-slide, inverse, middle, center
+
+## About the trainer
+
+&lt;img style="border-radius: 80%;" src="images/prof_kay.jpeg" width="180px"/&gt;
+
+### Ogunyemi Olakunle Joshua
+
+#### Data Scientist
+
+.fade[TAG NG&lt;br&gt;Lagos, Nigeria]
+
+[&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"&gt;&lt;/path&gt;&lt;/svg&gt; @olakunle4impact](https://twitter.com/olakunle4impact)
 
 ---
 class: middle
@@ -290,7 +321,7 @@ Before you can use any installed package, you will need to import or load them b
 
 
 ```r
-library("pkg_name")
+library(pkg_name)
 ```
 --
 
@@ -347,6 +378,7 @@ To see which libraries are available (which paths are searched for packages), us
 
 --
 
+
 ```r
 .libPaths()
 ```
@@ -355,297 +387,6 @@ To see which libraries are available (which paths are searched for packages), us
 [1] "C:/Users/OGUNDEPO EZEKIEL .A/Documents/R/win-library/3.6"
 [2] "C:/Program Files/R/R-3.6.3/library"                      
 ```
-
----
-
-And to see packages that are there:
-
---
-
-
-```r
-lapply(.libPaths(), dir)
-```
-
-```
-[[1]]
-  [1] "abind"                "acepack"              "ada"                 
-  [4] "adabag"               "AICcmodavg"           "airports"            
-  [7] "alphavantager"        "antiword"             "anytime"             
- [10] "ape"                  "aplpack"              "arm"                 
- [13] "askpass"              "assertthat"           "astsa"               
- [16] "attempt"              "AUC"                  "audio"               
- [19] "av"                   "babynames"            "backports"           
- [22] "bartMachine"          "bartMachineJARs"      "base64enc"           
- [25] "BayesFactor"          "bayesplot"            "bayestestR"          
- [28] "BBmisc"               "bbmle"                "BDgraph"             
- [31] "bdsmatrix"            "beepr"                "BH"                  
- [34] "bibtex"               "BIEN"                 "BiocManager"         
- [37] "bit"                  "bit64"                "bitops"              
- [40] "blob"                 "blogdown"             "boa"                 
- [43] "bookdown"             "boot"                 "brew"                
- [46] "bridgesampling"       "brio"                 "Brobdingnag"         
- [49] "broom"                "broom.mixed"          "broomExtra"          
- [52] "BRugs"                "BSDA"                 "bslib"               
- [55] "bst"                  "BWStest"              "C50"                 
- [58] "cachem"               "callr"                "car"                 
- [61] "carData"              "caret"                "cartography"         
- [64] "cartomisc"            "catboost"             "caTools"             
- [67] "cellranger"           "charlatan"            "checkmate"           
- [70] "cherryblossom"        "citr"                 "classInt"            
- [73] "cli"                  "clipr"                "clisymbols"          
- [76] "cluster"              "coda"                 "coin"                
- [79] "colorspace"           "colourpicker"         "colourvalues"        
- [82] "combinat"             "commonmark"           "config"              
- [85] "conflicted"           "connections"          "conquer"             
- [88] "contfrac"             "corpcor"              "correlation"         
- [91] "correlationfunnel"    "corrplot"             "corrr"               
- [94] "countdown"            "countrycode"          "covr"                
- [97] "cowplot"              "cpp11"                "cranlogs"            
-[100] "crayon"               "credentials"          "crosstalk"           
-[103] "csvy"                 "cubelyr"              "Cubist"              
-[106] "curl"                 "cyclocomp"            "d3Network"           
-[109] "data.table"           "DataExplorer"         "datamods"            
-[112] "datapasta"            "dbarts"               "DBI"                 
-[115] "dbplot"               "dbplyr"               "deldir"              
-[118] "dendextend"           "desc"                 "DescTools"           
-[121] "deSolve"              "devtools"             "DiagrammeR"          
-[124] "dials"                "DiceDesign"           "dichromat"           
-[127] "diffobj"              "digest"               "dismo"               
-[130] "distributional"       "doParallel"           "downloader"          
-[133] "dplyr"                "DT"                   "dtplyr"              
-[136] "dtt"                  "dummies"              "dunn.test"           
-[139] "dygraphs"             "e1071"                "earth"               
-[142] "effects"              "effectsize"           "elasticnet"          
-[145] "ellipse"              "ellipsis"             "elliptic"            
-[148] "emo"                  "EMT"                  "english"             
-[151] "EnvStats"             "epitools"             "equatiomatic"        
-[154] "esquisse"             "estimability"         "evaluate"            
-[157] "exactextractr"        "expm"                 "expsmooth"           
-[160] "extraDistr"           "extrafont"            "extrafontdb"         
-[163] "ez"                   "fable"                "fable.prophet"       
-[166] "fabletools"           "factoextra"           "FactoMineR"          
-[169] "fakir"                "fansi"                "farver"              
-[172] "fastAdaboost"         "fasterize"            "fastGHQuad"          
-[175] "fastmap"              "fastmatch"            "fdrtool"             
-[178] "feasts"               "feather"              "filelock"            
-[181] "flashClust"           "flexdashboard"        "float"               
-[184] "fma"                  "FNN"                  "foba"                
-[187] "forcats"              "foreach"              "forecast"            
-[190] "foreign"              "forge"                "Formula"             
-[193] "fpp2"                 "fpp3"                 "fracdiff"            
-[196] "fs"                   "FSA"                  "fst"                 
-[199] "furrr"                "future"               "future.apply"        
-[202] "fuzzyjoin"            "gapminder"            "gargle"              
-[205] "gbm"                  "gclus"                "gdalcubes"           
-[208] "gdata"                "gdtools"              "geeM"                
-[211] "geepack"              "generics"             "geojsonsf"           
-[214] "geosphere"            "gert"                 "getPass"             
-[217] "GGally"               "gganimate"            "ggchicklet"          
-[220] "ggcorrplot"           "ggeasy"               "ggExtra"             
-[223] "ggfittext"            "ggforce"              "ggformula"           
-[226] "ggimage"              "ggm"                  "ggmap"               
-[229] "ggplot2"              "ggplotify"            "ggpubr"              
-[232] "ggraph"               "ggrepel"              "ggridges"            
-[235] "ggsci"                "ggsignif"             "ggsn"                
-[238] "ggspatial"            "ggstance"             "ggstatsplot"         
-[241] "ggtext"               "ggthemes"             "ggvis"               
-[244] "gh"                   "gifski"               "giphyr"              
-[247] "git2r"                "gitcreds"             "glasso"              
-[250] "glmnet"               "globals"              "glue"                
-[253] "gmodels"              "gmp"                  "goftest"             
-[256] "googledrive"          "googlePolylines"      "googlesheets4"       
-[259] "gower"                "GPfit"                "gplots"              
-[262] "gradethis"            "graphlayouts"         "gridBase"            
-[265] "gridExtra"            "gridGraphics"         "gridtext"            
-[268] "groupedstats"         "gstat"                "gt"                  
-[271] "gtable"               "gtools"               "gtrendsR"            
-[274] "gutenbergr"           "hablar"               "hardhat"             
-[277] "haven"                "here"                 "hexbin"              
-[280] "hexView"              "highcharter"          "highr"               
-[283] "Hmisc"                "hms"                  "hrbrthemes"          
-[286] "htmlTable"            "htmltools"            "htmlwidgets"         
-[289] "httpuv"               "httr"                 "huge"                
-[292] "hunspell"             "hypergeo"             "icons"               
-[295] "ids"                  "igraph"               "imageclipr"          
-[298] "infer"                "influenceR"           "InformationValue"    
-[301] "ini"                  "inline"               "insight"             
-[304] "inspectdf"            "install.load"         "installr"            
-[307] "intervals"            "inum"                 "ipmisc"              
-[310] "ipred"                "isoband"              "ISOcodes"            
-[313] "iterators"            "itertools"            "janeaustenr"         
-[316] "janitor"              "jpeg"                 "jquerylib"           
-[319] "jsonify"              "jsonlite"             "kableExtra"          
-[322] "kernlab"              "KernSmooth"           "kinship2"            
-[325] "klaR"                 "knitr"                "koRpus"              
-[328] "koRpus.lang.en"       "kSamples"             "kulife"              
-[331] "labeling"             "labelled"             "LaplacesDemon"       
-[334] "lars"                 "later"                "lattice"             
-[337] "latticeExtra"         "lava"                 "lavaan"              
-[340] "lazyeval"             "lda"                  "ldatuning"           
-[343] "leafem"               "leaflet"              "leaflet.extras"      
-[346] "leaflet.providers"    "leafpm"               "leafpop"             
-[349] "leafsync"             "leaps"                "LearnBayes"          
-[352] "learnr"               "lexicon"              "lgr"                 
-[355] "lhs"                  "libcoin"              "librarian"           
-[358] "lifecycle"            "lintr"                "listenv"             
-[361] "lme4"                 "lmtest"               "logspline"           
-[364] "loo"                  "lubridate"            "lwgeom"              
-[367] "magick"               "magrittr"             "mailR"               
-[370] "manipulateWidget"     "mapdeck"              "mapedit"             
-[373] "maps"                 "maptools"             "mapview"             
-[376] "markdown"             "MASS"                 "matlib"              
-[379] "Matrix"               "matrixcalc"           "MatrixModels"        
-[382] "matrixStats"          "mboost"               "mc2d"                
-[385] "mda"                  "mdthemes"             "memoise"             
-[388] "MESS"                 "metaBMA"              "metafor"             
-[391] "metaplus"             "metathis"             "Metrics"             
-[394] "mgcv"                 "mgsub"                "mi"                  
-[397] "microbenchmark"       "mime"                 "miniUI"              
-[400] "minqa"                "missForest"           "mitools"             
-[403] "mlapi"                "mlbench"              "MLmetrics"           
-[406] "mlr"                  "mltools"              "mnormt"              
-[409] "modeldata"            "modeldb"              "ModelMetrics"        
-[412] "modelr"               "modeltools"           "monomvn"             
-[415] "mosaicCore"           "MSQC"                 "multcomp"            
-[418] "multcompView"         "munsell"              "mvtnorm"             
-[421] "na.tools"             "naivebayes"           "NbClust"             
-[424] "ncdf4"                "ndjson"               "network"             
-[427] "networkD3"            "NHSRdatasets"         "nlme"                
-[430] "nloptr"               "NLP"                  "nnet"                
-[433] "nnls"                 "nortest"              "numDeriv"            
-[436] "nycflights13"         "odbc"                 "OneR"                
-[439] "openintro"            "openssl"              "openxlsx"            
-[442] "packrat"              "padr"                 "pairwiseComparisons" 
-[445] "paletteer"            "palmerpenguins"       "pander"              
-[448] "parallelMap"          "parameters"           "ParamHelpers"        
-[451] "parsedate"            "parsnip"              "party"               
-[454] "partykit"             "patchwork"            "pbapply"             
-[457] "pbivnorm"             "pbkrtest"             "pdftools"            
-[460] "performance"          "PerformanceAnalytics" "pillar"              
-[463] "pins"                 "pkgbuild"             "pkgconfig"           
-[466] "pkgload"              "pkgsearch"            "plogr"               
-[469] "plotly"               "plotmo"               "plotrix"             
-[472] "pls"                  "plyr"                 "PMCMRplus"           
-[475] "png"                  "polspline"            "polyclip"            
-[478] "polynom"              "praise"               "PreProcessing"       
-[481] "prettymapr"           "prettyunits"          "prismatic"           
-[484] "pROC"                 "processx"             "prodlim"             
-[487] "profvis"              "progress"             "progressr"           
-[490] "promises"             "prophet"              "proxyC"              
-[493] "ps"                   "psych"                "purrr"               
-[496] "qap"                  "qdapRegex"            "qgraph"              
-[499] "qpdf"                 "quadprog"             "Quandl"              
-[502] "quanteda"             "quantmod"             "quantreg"            
-[505] "questionr"            "qwraps2"              "R.cache"             
-[508] "R.methodsS3"          "R.oo"                 "R.utils"             
-[511] "r2d3"                 "R2jags"               "R2OpenBUGS"          
-[514] "R2WinBUGS"            "R6"                   "radix"               
-[517] "ralger"               "randomForest"         "randomizr"           
-[520] "randtests"            "RANN"                 "rapidjsonr"          
-[523] "rappdirs"             "raster"               "rasterVis"           
-[526] "rayshader"            "rcmdcheck"            "Rcmdr"               
-[529] "RcmdrMisc"            "RColorBrewer"         "rcompanion"          
-[532] "Rcpp"                 "RcppArmadillo"        "RcppEigen"           
-[535] "RcppParallel"         "RcppProgress"         "RcppRoll"            
-[538] "RCurl"                "rda"                  "readODS"             
-[541] "readr"                "readstata13"          "readtext"            
-[544] "readxl"               "recipes"              "RefManageR"          
-[547] "regexplain"           "registry"             "relaxo"              
-[550] "relimp"               "rematch"              "rematch2"            
-[553] "remedy"               "remotes"              "renv"                
-[556] "report"               "repr"                 "reprex"              
-[559] "repurrrsive"          "reshape"              "reshape2"            
-[562] "reticulate"           "rex"                  "rgdal"               
-[565] "rgeos"                "rgl"                  "RgoogleMaps"         
-[568] "RhpcBLASctl"          "riingo"               "rio"                 
-[571] "rjags"                "rJava"                "rjson"               
-[574] "rlang"                "rlist"                "rmarkdown"           
-[577] "rmatio"               "Rmpfr"                "rms"                 
-[580] "RMySQL"               "rnaturalearth"        "robotstxt"           
-[583] "ROCR"                 "RODBC"                "RODBCDBI"            
-[586] "rosm"                 "roxygen2"             "rpart.plot"          
-[589] "rpostgis"             "RPostgres"            "RPostgreSQL"         
-[592] "rprojroot"            "rsample"              "rsconnect"           
-[595] "rscontract"           "rsparse"              "RSpectra"            
-[598] "RSQLite"              "rstan"                "rstanarm"            
-[601] "rstantools"           "rstatix"              "rstudioapi"          
-[604] "rticles"              "Rttf2pt1"             "rtweet"              
-[607] "rvcheck"              "rversions"            "rvest"               
-[610] "RWeka"                "RWekajars"            "sandwich"            
-[613] "sass"                 "satellite"            "scales"              
-[616] "scatterplot3d"        "sciplot"              "SDMTools"            
-[619] "searcher"             "selectr"              "sem"                 
-[622] "sentimentr"           "seriation"            "servr"               
-[625] "sessioninfo"          "sf"                   "sfheaders"           
-[628] "shades"               "shadowtext"           "shape"               
-[631] "shiny"                "shinycssloaders"      "shinyFeedback"       
-[634] "shinyjs"              "shinystan"            "shinythemes"         
-[637] "shinyWidgets"         "showtext"             "showtextdb"          
-[640] "sjlabelled"           "skimr"                "slam"                
-[643] "slider"               "slippymath"           "sna"                 
-[646] "snakecase"            "SnowballC"            "sortable"            
-[649] "sourcetools"          "sp"                   "spacetime"           
-[652] "sparklyr"             "SparseM"              "spatialEco"          
-[655] "SpatialPack"          "spatialwidget"        "spatstat"            
-[658] "spatstat.data"        "spatstat.utils"       "spData"              
-[661] "spdep"                "spiderbar"            "sqlpetr"             
-[664] "SQUAREM"              "stabs"                "StanHeaders"         
-[667] "stars"                "statmod"              "statnet.common"      
-[670] "statsExpressions"     "stm"                  "stopwords"           
-[673] "streamR"              "stringdist"           "stringi"             
-[676] "stringr"              "striprtf"             "strucchange"         
-[679] "styler"               "suncalc"              "SuppDists"           
-[682] "sur"                  "survey"               "survival"            
-[685] "svglite"              "sylly"                "sylly.en"            
-[688] "sys"                  "sysfonts"             "systemfonts"         
-[691] "syuzhet"              "tabulizer"            "tabulizerjars"       
-[694] "tagger"               "taskscheduleR"        "tastypie"            
-[697] "tcltk2"               "TeachingDemos"        "tensor"              
-[700] "testthat"             "text2vec"             "textclean"           
-[703] "textdata"             "textmineR"            "textshape"           
-[706] "textstem"             "TH.data"              "thematic"            
-[709] "threejs"              "tibble"               "tictoc"              
-[712] "tidyBF"               "tidygraph"            "tidyimpute"          
-[715] "tidylog"              "tidymodels"           "tidyposterior"       
-[718] "tidypredict"          "tidyquant"            "tidyr"               
-[721] "tidyselect"           "tidytable"            "tidytext"            
-[724] "tidyverse"            "tigris"               "timeDate"            
-[727] "timetk"               "tinytex"              "tm"                  
-[730] "tmap"                 "tmaptools"            "TMB"                 
-[733] "tokenizers"           "topicmodels"          "treemap"             
-[736] "triebeard"            "tseries"              "tsibble"             
-[739] "tsibbledata"          "TSP"                  "TTR"                 
-[742] "tune"                 "tvthemes"             "tweenr"              
-[745] "units"                "unmarked"             "urca"                
-[748] "urltools"             "usdata"               "usethis"             
-[751] "utf8"                 "uuid"                 "V8"                  
-[754] "vcd"                  "vctrs"                "vegawidget"          
-[757] "velox"                "VGAM"                 "ViewPipeSteps"       
-[760] "viridis"              "viridisLite"          "visNetwork"          
-[763] "vistributions"        "vroom"                "vtable"              
-[766] "waiter"               "waldo"                "warp"                
-[769] "webshot"              "wesanderson"          "whisker"             
-[772] "widgetframe"          "widyr"                "withr"               
-[775] "wooldridge"           "wordcloud"            "wordcloud2"          
-[778] "workflowr"            "workflows"            "workflowsets"        
-[781] "writexl"              "WRS2"                 "xaringan"            
-[784] "xaringanExtra"        "xaringanthemer"       "xfun"                
-[787] "xgboost"              "XML"                  "xml2"                
-[790] "xmlparsedata"         "xopen"                "xtable"              
-[793] "xts"                  "yaImpute"             "yaml"                
-[796] "yardstick"            "zeallot"              "zip"                 
-[799] "zoo"                 
-
-[[2]]
- [1] "base"         "boot"         "class"        "cluster"      "codetools"   
- [6] "compiler"     "datasets"     "foreign"      "graphics"     "grDevices"   
-[11] "grid"         "KernSmooth"   "lattice"      "MASS"         "Matrix"      
-[16] "methods"      "mgcv"         "nlme"         "nnet"         "parallel"    
-[21] "rpart"        "spatial"      "splines"      "stats"        "stats4"      
-[26] "survival"     "tcltk"        "tools"        "translations" "utils"       
-```
-
 ---
 
 ## When to use `library(x)` or `require(x)`?
@@ -766,6 +507,8 @@ specific directory (Folder).
 ]
 
 ---
+background-image: url(https://github.com/yihui/xaringan/releases/download/v0.0.2/karl-moustache.jpg)
+---
 layout: false
 
 ## Paths and Directories
@@ -829,8 +572,6 @@ Hurray! We are in the RStudio project.
 
 
 ---
-background-image: url(https://github.com/yihui/xaringan/releases/download/v0.0.2/karl-moustache.jpg)
----
 class: middle
 
 &lt;img src="images/rproj.png" width="2045" /&gt;
@@ -851,7 +592,7 @@ layout: true
 
 ---
 .w-100.lh-copy[
-Creating a dataframe from scratch is so tedious. In the data science world, data will be available for you on a spreadsheet such as MS-Excel. Our job as a data scientist is to import those datasets into R using any data import packages such as `readr`(.csv), `readxl`(.xlsx), `haven`(.sav, .dta), and or `rio`(any data file format), `ralger`(web data).
+Creating a dataframe from scratch is so tedious. In the data science world, data will be available for you on a spreadsheet such as MS-Excel. Our job as a data scientist is to import those datasets into R using any data import packages such as `readr` (.csv), `readxl` (.xlsx), `haven` (.sav, .dta), and or `rio` (any data file format), `ralger` (web data).
 ]
 
 --
@@ -894,7 +635,7 @@ Please note that `readr`, `readxl`, and `haven` are part of tidyverse set of pac
 
   - `write_sav()` export a dataframe as `.sav` file out of R 
   
-  - `read_dat()` import a `.dat` file to R
+  - `read_dta()` import a `.dta` file to R
 
   - `write_dat()` export a dataframe as `.dat` file out of R  
   
