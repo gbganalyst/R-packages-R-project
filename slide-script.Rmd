@@ -1,10 +1,7 @@
 ---
-title: "RStudio, R packages, and R project"
-subtitle: "A typical data science workflow in R"
-date: '`r format(Sys.Date(), "%B %d, %Y")`'
 output:
   xaringan::moon_reader:
-    yolo: true
+    yolo: false
     lib_dir: libs
     css: xaringan-themer.css
     seal: false
@@ -42,7 +39,7 @@ style_duo_accent(
 
 # Loaded packages
 
-install.load::install_load(c("knitr", "xaringanExtra", "xaringan", "tidyverse", "kableExtra", "countdown"))
+install.load::install_load(c("knitr", "xaringanExtra", "xaringan", "tidyverse", "kableExtra", "countdown", "janitor"))
 
 xaringanExtra::use_xaringan_extra(include = c("tile_view", "editable", "share_again", "broadcast", "animate_css", "panelset", "tachyons", "fit_screen", "clipboard", "search", "scribble", "freezeframe"))
 
@@ -90,7 +87,8 @@ class: about-me-slide, inverse, middle, center
 [`r icons::fontawesome("twitter")` @gbganalyst](https://twitter.com/gbganalyst)
 [`r icons::icon_style(icons::fontawesome("github"), scale = 1)` @gbganalyst](https://github.com/gbganalyst)
 
----
+???
+
 class: about-me-slide, inverse, middle, center
 
 ## About the trainer
@@ -107,7 +105,8 @@ class: about-me-slide, inverse, middle, center
 [`r icons::fontawesome("twitter")` @abono2000](https://twitter.com/abono2000)
 [`r icons::icon_style(icons::fontawesome("github"), scale = 1)` @abono2000](https://github.com/abono2000)
 
----
+???
+
 class: about-me-slide, inverse, middle, center
 
 ## About the trainer
@@ -134,7 +133,7 @@ Goal:
 ]
 
 ---
-class: inverse
+class: inverse, middle
 name: toc
 
 
@@ -148,9 +147,8 @@ name: toc
 
 - [RStudio project](#beg3)
 
-- [Importing data into R](#beg4)
+- [Reading and writing data in R](#beg4)
 
-- [Exporting data from R](#beg5)
 ]
 
 ---
@@ -299,7 +297,7 @@ library(pkg_name)
 --
 
 .w-100.lh-copy[
-which makes that package functions available to you in the R session or environment.
+which makes that package functions available for you in the R session or environment.
 ]
 
 --
@@ -315,10 +313,11 @@ library(janitor)
 
 library(ralger)
 ```
+
 --
 
 .w-100.lh-copy[
-You can also load all the packages with one line of code by using a function, `install_load()` in `install_load` package. For example:
+You can also load all the packages with one line of code by using a function, `install_load()` in `install.load` package. For example:
 ]
 
 --
@@ -333,9 +332,13 @@ background-image: url(images/package.png)
 background-size: contain
 background-position: 60% 60%
 
-
 ### Think of R package as this:
+
+.w-100.lh-copy[
+You only need to install a package once, but you need to reload it every time you start a new session.
+]
 ---
+class: middle 
 
 ## R Library
 
@@ -353,6 +356,7 @@ To see which libraries are available (which paths are searched for packages), us
 .libPaths()
 ```
 ---
+class: middle
 
 ## When to use `library(x)` or `require(x)`?
 
@@ -377,25 +381,36 @@ remove.packages("pkg_name")
 ```
 ---
 
-## Using function in a package with double colon (`::`) operator
+## Attach a function in a package with double colon (`::`) operator
 
 .w-100.lh-copy[
 There are many ways to make use of functions in a package. You can
-load the package with `library(pkg_name)` and then use any function in it.
+load the package with `library(pkg_name)` and then use any of its `functions`. For example:
+
+
+```{r, eval=FALSE}
+library(install.load)
+
+install_load(c("tidyverse", "janitor", "ralger"))
+```
+
 ]
 
 --
 
 .w-100.lh-copy[
-Or you can use the `::` operator, for example, writing
-`janitor::clean_name()` rather than `library(janitor)` and then
-`clean_name()`.
+Or you can use the `::` operator, for example:`.
+
+```{r, eval=FALSE}
+install.load::install_load(c("tidyverse", "janitor", "ralger"))
+```
+
 ]
 
 --
+
 .w-100.lh-copy[
-The move is towards the latter, where only the necessary functions will be
-loaded, rather than attaching the whole package. So to carry the reader of your script on which function belongs to a particular package, it is better to use `package_name::function()`.
+The move is towards the latter, where only the necessary functions will be loaded, rather than attaching the whole package. So to carry the reader of your script on which function belongs to a particular package, it is better to use `package_name::function()`.
 ]
 
 ---
@@ -404,19 +419,31 @@ class: middle
 ### Example 1
 
 ```{r, eval=FALSE}
-library(install.load)
+first_5_iris <- head(iris, 5)
 
-install_load(c("tidyverse", "janitor", "ralger"))
+library(janitor)
+
+clean_names(first_5_iris)
 ```
 
---
+```{r, echo=FALSE}
+iris %>% head(5) %>% clean_names() %>% kable()
+```
+
+---
+class: middle
 
 ### Example 2
 
 ```{r, eval=FALSE}
-install.load::install_load(c("tidyverse", "janitor", "ralger"))
+first_5_iris <- head(iris, 5)
+
+janitor::clean_names(first_5_iris)
 ```
 
+```{r, echo=FALSE}
+iris %>% head(5) %>% clean_names() %>% kable()
+```
 
 ---
 
@@ -427,6 +454,7 @@ name: beg3
 
 ---
 layout: true
+
 ## Where Does Your Analysis Live?
 
 ---
@@ -453,6 +481,8 @@ and you can also print this out by using:
 getwd()
 ```
 ---
+class: middle
+
 .w-100.lh-copy[
 If you have specific directory that you want to use as your working
 directory, in `R` you can do that with the command `setwd()` e.g.
@@ -561,7 +591,7 @@ layout: true
 
 ---
 .w-100.lh-copy[
-Creating a dataframe from scratch is so tedious. In the data science world, data will be available for you on a spreadsheet such as MS-Excel. Our job as a data scientist is to import those datasets into R using any data import packages such as `readr` (.csv), `readxl` (.xlsx), `haven` (.sav, .dta), and or `rio` (any data file format), `ralger` (web data).
+Creating a dataframe from scratch is so tedious. In the data science world, data will be available for you on a spreadsheet such as MS-Excel. Our job as a data scientist is to import those datasets into R using any data import packages such as `readr` (.csv), `readxl` (.xlsx), `haven` (.sav, .dta), `rio` (any data file format), or `ralger` (web data).
 ]
 
 --
@@ -577,7 +607,12 @@ include_graphics("images/import.png")
 .pull-right[
 
 .w-100.lh-copy[
-Please note that `readr`, `readxl`, and `haven` are part of tidyverse set of packages.
+Please note that `readr`, `readxl`, and `haven` are part of `tidyverse` set of packages. You can see all the packages in the tidyverse by using:
+
+```{r, eval=FALSE}
+tidyverse::tidyverse_packages()
+```
+
 ]
 ]
 ---
@@ -629,6 +664,7 @@ To import and export data in R, we will make use of the `RStudio project`, to au
 ]
 
 ---
+layout: false
 
 ### Lab session
 
@@ -637,6 +673,8 @@ include_graphics("images/lab.png")
 ```
 ---
 layout: false
+class: middle
+
 ## Summary
 
 .w-100.lh-copy[

@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>RStudio, R packages, and R project</title>
+    <title>slide-script.knit</title>
     <meta charset="utf-8" />
-    <meta name="date" content="2021-06-19" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
     <script src="libs/tile-view/tile-view.js"></script>
@@ -12,7 +11,7 @@
     <script src="libs/xaringanExtra_fit-screen/fit-screen.js"></script>
     <link href="libs/panelset/panelset.css" rel="stylesheet" />
     <script src="libs/panelset/panelset.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"b850704737e145d885d324da4529572e","expires":14}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x0efdd45077f4feeb1ac8dff4959cedd","expires":14}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
@@ -117,7 +116,8 @@ class: about-me-slide, inverse, middle, center
 [&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"&gt;&lt;/path&gt;&lt;/svg&gt; @gbganalyst](https://twitter.com/gbganalyst)
 [&lt;svg viewBox="0 0 496 512" style="position:relative;display:inline-block;top:.1em;height:1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"&gt;&lt;/path&gt;&lt;/svg&gt; @gbganalyst](https://github.com/gbganalyst)
 
----
+???
+
 class: about-me-slide, inverse, middle, center
 
 ## About the trainer
@@ -134,7 +134,8 @@ class: about-me-slide, inverse, middle, center
 [&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"&gt;&lt;/path&gt;&lt;/svg&gt; @abono2000](https://twitter.com/abono2000)
 [&lt;svg viewBox="0 0 496 512" style="position:relative;display:inline-block;top:.1em;height:1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"&gt;&lt;/path&gt;&lt;/svg&gt; @abono2000](https://github.com/abono2000)
 
----
+???
+
 class: about-me-slide, inverse, middle, center
 
 ## About the trainer
@@ -161,7 +162,7 @@ Goal:
 ]
 
 ---
-class: inverse
+class: inverse, middle
 name: toc
 
 
@@ -175,9 +176,8 @@ name: toc
 
 - [RStudio project](#beg3)
 
-- [Importing data into R](#beg4)
+- [Reading and writing data in R](#beg4)
 
-- [Exporting data from R](#beg5)
 ]
 
 ---
@@ -326,7 +326,7 @@ library(pkg_name)
 --
 
 .w-100.lh-copy[
-which makes that package functions available to you in the R session or environment.
+which makes that package functions available for you in the R session or environment.
 ]
 
 --
@@ -343,10 +343,11 @@ library(janitor)
 
 library(ralger)
 ```
+
 --
 
 .w-100.lh-copy[
-You can also load all the packages with one line of code by using a function, `install_load()` in `install_load` package. For example:
+You can also load all the packages with one line of code by using a function, `install_load()` in `install.load` package. For example:
 ]
 
 --
@@ -362,9 +363,13 @@ background-image: url(images/package.png)
 background-size: contain
 background-position: 60% 60%
 
-
 ### Think of R package as this:
+
+.w-100.lh-copy[
+You only need to install a package once, but you need to reload it every time you start a new session.
+]
 ---
+class: middle 
 
 ## R Library
 
@@ -388,6 +393,7 @@ To see which libraries are available (which paths are searched for packages), us
 [2] "C:/Program Files/R/R-3.6.3/library"                      
 ```
 ---
+class: middle
 
 ## When to use `library(x)` or `require(x)`?
 
@@ -413,25 +419,38 @@ remove.packages("pkg_name")
 ```
 ---
 
-## Using function in a package with double colon (`::`) operator
+## Attach a function in a package with double colon (`::`) operator
 
 .w-100.lh-copy[
 There are many ways to make use of functions in a package. You can
-load the package with `library(pkg_name)` and then use any function in it.
+load the package with `library(pkg_name)` and then use any of its `functions`. For example:
+
+
+
+```r
+library(install.load)
+
+install_load(c("tidyverse", "janitor", "ralger"))
+```
+
 ]
 
 --
 
 .w-100.lh-copy[
-Or you can use the `::` operator, for example, writing
-`janitor::clean_name()` rather than `library(janitor)` and then
-`clean_name()`.
+Or you can use the `::` operator, for example:`.
+
+
+```r
+install.load::install_load(c("tidyverse", "janitor", "ralger"))
+```
+
 ]
 
 --
+
 .w-100.lh-copy[
-The move is towards the latter, where only the necessary functions will be
-loaded, rather than attaching the whole package. So to carry the reader of your script on which function belongs to a particular package, it is better to use `package_name::function()`.
+The move is towards the latter, where only the necessary functions will be loaded, rather than attaching the whole package. So to carry the reader of your script on which function belongs to a particular package, it is better to use `package_name::function()`.
 ]
 
 ---
@@ -441,20 +460,122 @@ class: middle
 
 
 ```r
-library(install.load)
+first_5_iris &lt;- head(iris, 5)
 
-install_load(c("tidyverse", "janitor", "ralger"))
+library(janitor)
+
+clean_names(first_5_iris)
 ```
 
---
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; sepal_length &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; sepal_width &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; petal_length &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; petal_width &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; species &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4.9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4.6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+class: middle
 
 ### Example 2
 
 
 ```r
-install.load::install_load(c("tidyverse", "janitor", "ralger"))
+first_5_iris &lt;- head(iris, 5)
+
+janitor::clean_names(first_5_iris)
 ```
 
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; sepal_length &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; sepal_width &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; petal_length &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; petal_width &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; species &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4.9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4.6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
 ---
 
@@ -465,6 +586,7 @@ name: beg3
 
 ---
 layout: true
+
 ## Where Does Your Analysis Live?
 
 ---
@@ -494,6 +616,8 @@ getwd()
 [1] "C:/Users/OGUNDEPO EZEKIEL .A/Desktop/R-training-modules/R-packages-R-project"
 ```
 ---
+class: middle
+
 .w-100.lh-copy[
 If you have specific directory that you want to use as your working
 directory, in `R` you can do that with the command `setwd()` e.g.
@@ -506,8 +630,6 @@ or by using the keyboard shortcut  `Ctrl+Shift+H` and choose that
 specific directory (Folder).
 ]
 
----
-background-image: url(https://github.com/yihui/xaringan/releases/download/v0.0.2/karl-moustache.jpg)
 ---
 layout: false
 
@@ -592,7 +714,7 @@ layout: true
 
 ---
 .w-100.lh-copy[
-Creating a dataframe from scratch is so tedious. In the data science world, data will be available for you on a spreadsheet such as MS-Excel. Our job as a data scientist is to import those datasets into R using any data import packages such as `readr` (.csv), `readxl` (.xlsx), `haven` (.sav, .dta), and or `rio` (any data file format), `ralger` (web data).
+Creating a dataframe from scratch is so tedious. In the data science world, data will be available for you on a spreadsheet such as MS-Excel. Our job as a data scientist is to import those datasets into R using any data import packages such as `readr` (.csv), `readxl` (.xlsx), `haven` (.sav, .dta), `rio` (any data file format), or `ralger` (web data).
 ]
 
 --
@@ -606,7 +728,13 @@ Creating a dataframe from scratch is so tedious. In the data science world, data
 .pull-right[
 
 .w-100.lh-copy[
-Please note that `readr`, `readxl`, and `haven` are part of tidyverse set of packages.
+Please note that `readr`, `readxl`, and `haven` are part of `tidyverse` set of packages. You can see all the packages in the tidyverse by using:
+
+
+```r
+tidyverse::tidyverse_packages()
+```
+
 ]
 ]
 ---
@@ -658,12 +786,15 @@ To import and export data in R, we will make use of the `RStudio project`, to au
 ]
 
 ---
+layout: false
 
 ### Lab session
 
 &lt;img src="images/lab.png" width="2320" /&gt;
 ---
 layout: false
+class: middle
+
 ## Summary
 
 .w-100.lh-copy[
