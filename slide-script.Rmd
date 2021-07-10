@@ -49,7 +49,7 @@ use_webcam(width = 150, height = 150)
 use_extra_styles()
 ```
 
-background-image: url(images/gbg.jpg), url(images/R_logo.png)
+background-image: url(images/gbg.png), url(images/R_logo.png)
 background-position: 0% 100%, 100% 0%
 background-size: 40%, 10%
 
@@ -61,7 +61,7 @@ class: title-page, center, middle
 
 ```{r, echo=FALSE}
 use_logo(
-  image_url = "images/gbg.jpg",
+  image_url = "images/gbg.png",
   link_url = "https://bit.ly/gbganalyst",
   position = xaringanExtra::css_position(top = "1em", right = "1em"),
   exclude_class = c("title-page", "inverse", "hide_logo")
@@ -90,36 +90,6 @@ class: about-me-slide, inverse, middle, center
 ???
 
 class: about-me-slide, inverse, middle, center
-
-## About the trainer
-
-<img style="border-radius: 80%;" src="images/abono.jpg" width="180px"/>
-
-### Olanrewaju Ahmed Babajide
-
-#### Principal System Analyst, Data Scientist
-
-.fade[University of Ibadan<br>Oyo, Nigeria]
-
-[`r icons::fontawesome("link")` https://ui.edu.ng/ABOlanrewaju](https://ui.edu.ng/ABOlanrewaju)
-[`r icons::fontawesome("twitter")` @abono2000](https://twitter.com/abono2000)
-[`r icons::icon_style(icons::fontawesome("github"), scale = 1)` @abono2000](https://github.com/abono2000)
-
-???
-
-class: about-me-slide, inverse, middle, center
-
-## About the trainer
-
-<img style="border-radius: 80%;" src="images/prof_kay.jpeg" width="180px"/>
-
-### Ogunyemi Olakunle Joshua
-
-#### Data Scientist
-
-.fade[TAG NG<br>Lagos, Nigeria]
-
-[`r icons::fontawesome("twitter")` @olakunle4impact](https://twitter.com/olakunle4impact)
 
 ---
 class: middle
