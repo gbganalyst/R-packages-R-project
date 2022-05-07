@@ -74,14 +74,13 @@ class: about-me-slide, inverse, middle, center
 
 ## About the trainer
 
-<img style="border-radius: 50%;" src="images/ezekiel.jpeg" width="150px"/>
+<img style="border-radius: 80%;" src="images/ezekiel.jpeg" width="180px"/>
 
 ### Ezekiel Adebayo Ogundepo
 
 #### Data Scientist, Statistician
 
-.fade[Data Science Nigeria<br>Lagos, Nigeria]
-
+.fade[Virus Outbreak Data Network (VODAN Africa & Asia)<br> Nigeria Chapter]
 
 [`r icons::fontawesome("link")` https://bit.ly/gbganalyst](https://bit.ly/gbganalyst)
 [`r icons::fontawesome("twitter")` @gbganalyst](https://twitter.com/gbganalyst)
@@ -206,7 +205,7 @@ install.packages("tidyverse")
 ```
 --
 .w-100.lh-copy[
-Please note that the package name must be put on double quote (**" "**) or single quote (**' '**).
+Please note that the package name must be put on double quotes (**" "**) or a single quote (**' '**).
 ]
 
 ---
@@ -217,7 +216,7 @@ Other packages that are not yet on `CRAN` can also be installed from an external
 
 --
 
-For example, package `fakir` is not on `CRAN` yet. 
+For example, package `fakir` is not yet on `CRAN`. 
 --
  To install `fakir` from the `GitHub` repository,
 
@@ -284,19 +283,6 @@ library(janitor)
 library(ralger)
 ```
 
---
-
-.w-100.lh-copy[
-You can also load all the packages with one line of code by using a function, `install_load()` in `install.load` package. For example:
-]
-
---
-
-```{r, eval=FALSE}
-library(install.load)
-
-install_load(c("tidyverse", "janitor", "ralger"))
-```
 ---
 background-image: url(images/package.png)
 background-size: contain
@@ -328,20 +314,7 @@ To see which libraries are available (which paths are searched for packages), us
 ---
 class: middle
 
-## When to use `library(x)` or `require(x)`?
-
-.w-100.lh-copy[
-`library(pkg_name)` and `require(pkg_name)` both load a package to the R environment.
-
-`require(pkg_name)` is
-designed for use inside a function, it returns `FALSE`, and gives a **warning** (rather than an **error** as `library(pkg_name)` does by default) if the package
-does not exist.
-]
-
----
-class: middle
 ## Remove installed packages
-
 
 Remove installed packages/bundles and updates index information as
 necessary.
@@ -351,10 +324,11 @@ remove.packages("pkg_name")
 ```
 ---
 
-## Attach a function in a package with double colon (`::`) operator
+## Use a function from an external package without loading it	
+
 
 .w-100.lh-copy[
-There are many ways to make use of functions in a package. You can
+There are two ways to make use of a function in a package. You can
 load the package with `library(pkg_name)` and then use any of its `functions`. For example:
 
 
@@ -369,7 +343,8 @@ install_load(c("tidyverse", "janitor", "ralger"))
 --
 
 .w-100.lh-copy[
-Or you can use the `::` operator, for example:`.
+Or you can use the `::` operator to attach a function to a library i.e. `mypackage::myfunction()`. For example:
+
 
 ```{r, eval=FALSE}
 install.load::install_load(c("tidyverse", "janitor", "ralger"))
@@ -380,7 +355,7 @@ install.load::install_load(c("tidyverse", "janitor", "ralger"))
 --
 
 .w-100.lh-copy[
-The move is towards the latter, where only the necessary functions will be loaded, rather than attaching the whole package. So to carry the reader of your script on which function belongs to a particular package, it is better to use `package_name::function()`.
+It is often common to see people using `mypackage::myfunction()` so that the reader of a script can know which function belongs to a particular package.
 ]
 
 ---
@@ -389,9 +364,9 @@ class: middle
 ### Example 1
 
 ```{r, eval=FALSE}
-first_5_iris <- head(iris, 5)
-
 library(janitor)
+
+first_5_iris <- head(iris, 5)
 
 clean_names(first_5_iris)
 ```
@@ -533,7 +508,7 @@ include_graphics("images/step3.png")
 
 --
 
-Hurray! We are in the RStudio project.
+Hurray! We are in the `RStudio project`.
 
 
 ---
@@ -613,7 +588,7 @@ tidyverse::tidyverse_packages()
   
   - `read_dta()` import a `.dta` file to R
 
-  - `write_dat()` export a dataframe as `.dat` file out of R  
+  - `write_dta()` export a dataframe as `.dta` file out of R  
   
 ---
 
