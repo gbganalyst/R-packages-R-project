@@ -397,6 +397,15 @@ name: beg3
 
 # RStudio project
 
+.w-100.lh-copy[
+Data Analysis Reproducibility with R and RStudio Project.
+]
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/reproduce.png")
+```
+
+
 ---
 layout: true
 

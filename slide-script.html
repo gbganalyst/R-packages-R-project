@@ -11,7 +11,7 @@
     <script src="libs/xaringanExtra_fit-screen/fit-screen.js"></script>
     <link href="libs/panelset/panelset.css" rel="stylesheet" />
     <script src="libs/panelset/panelset.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xe94980b4535489f935723df02fe1ea4","expires":14}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x8f2dd62b4984b5d80b1bbdc81e814b7","expires":14}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
@@ -344,8 +344,8 @@ To see which libraries are available (which paths are searched for packages), us
 ```
 
 ```
-[1] "C:/Users/Ezekiel Adebayo/Documents/R/win-library/4.1"
-[2] "C:/Program Files/R/R-4.1.3/library"                  
+[1] "C:/Users/Ezekiel Adebayo/AppData/Local/R/win-library/4.2"
+[2] "C:/Program Files/R/R-4.2.1/library"                      
 ```
 ---
 class: middle
@@ -527,6 +527,13 @@ class: middle, center, inverse
 name: beg3
 
 # RStudio project
+
+.w-100.lh-copy[
+Data Analysis Reproducibility with R and RStudio Project.
+]
+
+&lt;img src="images/reproduce.png" width="1277" /&gt;
+
 
 ---
 layout: true
@@ -820,6 +827,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable
